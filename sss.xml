@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+    <!--
+            (只有下面的是需要自己添加的，其他的都是在新建spring配置xml文件的时候，就自带的啦)
+            1、导入基于注解的xsd
+                 xmlns:context="http://www.springframework.org/schema/context"
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context-2.5.xsd
+          2、导入注解解析器
+              <context:annotation-config></context:annotation-config>
+             3、导入person和student
+     -->
+
+    <context:annotation-config/>
+
+    <bean id="person" class="com.lxk.AtInterfaceTest.Person"/>
+    <bean id="ss" class="com.lxk.AtInterfaceTest.Student"/>
+
+</beans>
