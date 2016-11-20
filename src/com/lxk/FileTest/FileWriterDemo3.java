@@ -1,6 +1,7 @@
 package com.lxk.FileTest;
 
-import java.io.*;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * 演示对已有文件的数据续写。
