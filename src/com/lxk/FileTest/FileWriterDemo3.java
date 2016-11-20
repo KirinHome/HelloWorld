@@ -1,17 +1,18 @@
-package com.lxk.FileTest;/*
-演示对已有文件的数据续写。
-*/
+package com.lxk.FileTest;
+
 import java.io.*;
-class  FileWriterDemo3
-{
-	public static void main(String[] args) throws IOException
-	{
 
-		//传递一个true参数，代表不覆盖已有的文件。并在已有文件的末尾处进行数据续写。
-		FileWriter fw = new FileWriter("demo.txt",true);
+/**
+ * 演示对已有文件的数据续写。
+ */
+class FileWriterDemo3 {
+    public static void main(String[] args) throws IOException {
 
-		fw.write("nihao\r\nxiexie");
+        //传递一个true参数，代表不覆盖已有的文件。并在已有文件的末尾处进行数据续写。
+        FileWriter fw = new FileWriter("demo.txt", true);
 
-		fw.close();
-	}
+        fw.write("nihao\r\nxiexie");
+
+        fw.close();
+    }
 }
