@@ -8,7 +8,7 @@ class FileWriterDemo {
         //创建一个FileWriter对象。该对象一被初始化就必须要明确被操作的文件。
         //而且该文件会被创建到指定目录下。如果该目录下已有同名文件，将被覆盖。
         //其实该步就是在明确数据要存放的目的地。
-        FileWriter fw = new FileWriter("d:demo.txt");
+        FileWriter fw = new FileWriter("e:/demo.txt");
 
         //这个写法就是将续写文件。而不是像上面的直接覆盖。
         //FileWriter fw = new FileWriter("d:demo.txt",true);
