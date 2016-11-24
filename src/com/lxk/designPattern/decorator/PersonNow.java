@@ -8,14 +8,15 @@ package com.lxk.designPattern.decorator;
  * <p>
  * Created by lxk on 2016/11/24
  */
-public class PersonNow {
+public class PersonNow implements Person {
     private PersonBefore p;
 
     PersonNow(PersonBefore p) {
         this.p = p;
     }
 
-    public void superChifan() {
+    @Override
+    public void eat() {
         //简单扩展
         System.out.println("开胃酒");
         p.eat();

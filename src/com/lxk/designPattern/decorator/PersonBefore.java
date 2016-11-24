@@ -6,7 +6,8 @@ package com.lxk.designPattern.decorator;
  * <p>
  * Created by lxk on 2016/11/24
  */
-public class PersonBefore {
+public class PersonBefore implements Person {
+    @Override
     public void eat() {
         System.out.println("吃饭");
     }

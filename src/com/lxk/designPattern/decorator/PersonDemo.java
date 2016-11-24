@@ -15,6 +15,6 @@ class PersonDemo {
         PersonBefore p = new PersonBefore();
         //p.eat();//这个是需求1.0
         PersonNow sp = new PersonNow(p);
-        sp.superChifan();
+        sp.eat();
     }
 }
