@@ -1,4 +1,4 @@
-package com.lxk.ConcurrentModificationExceptionTest;
+package com.lxk.concurrentModificationExceptionTest;
 
 import com.google.common.collect.Lists;
 

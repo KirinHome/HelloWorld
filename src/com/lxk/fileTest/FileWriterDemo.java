@@ -1,4 +1,4 @@
-package com.lxk.FileTest;
+package com.lxk.fileTest;
 
 import java.io.FileWriter;
 import java.io.IOException;

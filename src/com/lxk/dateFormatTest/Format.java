@@ -1,4 +1,4 @@
-package com.lxk.DateFormatTest;
+package com.lxk.dateFormatTest;
 
 import com.lxk.test.TimesUtils;
 

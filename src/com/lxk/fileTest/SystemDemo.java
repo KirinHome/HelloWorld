@@ -1,4 +1,4 @@
-package com.lxk.FileTest;
+package com.lxk.fileTest;
 /*
 System:类中的方法和属性都是静态的。
 out:标准输出，默认是控制台。

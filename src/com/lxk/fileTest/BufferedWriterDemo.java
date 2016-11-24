@@ -1,4 +1,4 @@
-package com.lxk.FileTest;
+package com.lxk.fileTest;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

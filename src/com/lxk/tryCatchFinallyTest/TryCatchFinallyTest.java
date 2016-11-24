@@ -1,4 +1,4 @@
-package com.lxk.TryCatchFinallyTest;
+package com.lxk.tryCatchFinallyTest;
 
 /**
  * 测试 try{}catch(){}finally{}的具体执行顺序
