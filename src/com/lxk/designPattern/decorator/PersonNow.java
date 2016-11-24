@@ -8,14 +8,15 @@ package com.lxk.designPattern.decorator;
  * <p>
  * Created by lxk on 2016/11/24
  */
-public class SuperPerson {
-    private Person p;
+public class PersonNow {
+    private PersonBefore p;
 
-    SuperPerson(Person p) {
+    PersonNow(PersonBefore p) {
         this.p = p;
     }
 
     public void superChifan() {
+        //简单扩展
         System.out.println("开胃酒");
         p.eat();
         System.out.println("甜点");

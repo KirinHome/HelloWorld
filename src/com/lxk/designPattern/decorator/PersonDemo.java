@@ -12,9 +12,9 @@ package com.lxk.designPattern.decorator;
 
 class PersonDemo {
     public static void main(String[] args) {
-        Person p = new Person();
-        //p.eat();
-        SuperPerson sp = new SuperPerson(p);
+        PersonBefore p = new PersonBefore();
+        //p.eat();//这个是需求1.0
+        PersonNow sp = new PersonNow(p);
         sp.superChifan();
     }
 }

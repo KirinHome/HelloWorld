@@ -6,7 +6,7 @@ package com.lxk.designPattern.decorator;
  * <p>
  * Created by lxk on 2016/11/24
  */
-public class Person {
+public class PersonBefore {
     public void eat() {
         System.out.println("吃饭");
     }
