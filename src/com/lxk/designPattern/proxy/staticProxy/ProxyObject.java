@@ -1,7 +1,8 @@
 package com.lxk.designPattern.proxy.staticProxy;
 
 /**
- * 代理对象类也实现目标接口
+ * 代理对象类
+ * 也实现目标接口
  * 继而实现目标方法。
  */
 public class ProxyObject implements TargetInterface {
