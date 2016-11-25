@@ -46,4 +46,9 @@ public class ProxyObject implements TargetInterface {
         System.out.println("bbbbb");//切面方法f();
     }
 
+    /*
+        缺点：目标类的目标方法写死了，每当目标类的目标方法修改，那么代理对象类的方法就得跟着修改。
+        所以就出现了动态代理。
+     */
+
 }
