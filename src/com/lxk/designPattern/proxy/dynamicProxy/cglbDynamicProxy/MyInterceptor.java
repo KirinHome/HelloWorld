@@ -36,11 +36,13 @@ public class MyInterceptor implements MethodInterceptor {
      */
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-        System.out.println("aaaaa");//切面方法a();
-        //。。。
-        method.invoke(this.target, objects);//调用目标类的目标方法
-        //。。。
-        System.out.println("bbbbb");//切面方法f();
+        if(true){//不要在意这为什么是恒成立的条件语句，为的是说明一个aop的概念：切入点。
+            System.out.println("aaaaa");//切面方法a();
+            //。。。
+            method.invoke(this.target, objects);//调用目标类的目标方法
+            //。。。
+            System.out.println("bbbbb");//切面方法f();
+        }
         return null;
     }
 }
