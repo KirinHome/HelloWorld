@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    <!-- 
+    	1、目标类
+    	2、切面
+		3、进行aop的配置
+		(目标接口没有：因为引入到容器是为了实例化对象，接口是不能实现对象的。)
+		(也没有拦截器的引入，有的只是aop的配置，如上的3、)
+     -->
+    <!-- 目标类 -->
+    <bean id="personDao" class="com.lxk.spring.aop.PersonDaoImpl"/>
+    <!-- 切面的声明 -->
+    <bean id="transaction" class="com.lxk.spring.aop.Transaction"/>
+    <!-- aop配置 -->
+    <aop:config>
+        <!--
+            配置aop的切入点
+              id 是切入点的标识
+              expression 为切入点的表达式
+                 execution（modifiers-pattern? ret-type-pattern declaring-type-pattern? name-pattern（param-pattern）
+                    throws-pattern?）
+                 modifiers-pattern  修饰符  可选  public private protected
+                 ret-type-pattern  返回类型  必选  *  代表任意类型
+                 declaring-type-pattern  方法的声明类型
+                 name-patterm  方法名称类型
+                     set*  以set开头的所有的方法名称
+                     update*  以update开头的所有的方法名称
+                 param-pattern  参数匹配
+                     (..)  任意多个参数，每个参数任意多个类型
+                     (*,String) 两个参数  第一个是任意类型，第二个是String
+                     (String,*,Integer) 三个参数，第一个是String类型，第二个是任意类型，第三个是Integer类型
+                    throws-pattern  异常的匹配模式
+             例子：
+               execution(* cn.itcast.spring.aop.xml.AService.*(..));
+                  cn.itcast.spring.aop.xml.AService下的所有的方法
+               execution(public * cn.itcast.oa..*.*(..))
+                   返回值为任意类型，修饰符为public，在cn.itcast.oa包及子包下的所有的类的所有的方法
+               exectuion(* cn.itcast.oa..*.update*(*,String))
+                   返回值是任意类型，在cn.itcast.oa包及子包下所有的以update开头的参数为两个，第一个为任意类型
+                   第二个为String类型的所有类的所有的方法
+         -->
+        <aop:pointcut expression="execution(* com.lxk.spring.aop.PersonDaoImpl.*(..))" id="perform"/>
+        <!-- 配置切面(切面里面配置通知)—— ref 指向声明切面的类 -->
+        <aop:aspect ref="transaction">
+            <!-- 前置通知pointcut-ref 引用一个切入点 -->
+            <aop:before method="beginTransaction" pointcut-ref="perform"/>
+
+            <!--
+                后置通知
+                   *  returning 目标方法的返回值
+                   *  如果目标方法中有可能存在异常，异常确实发生了，这个时候，后置通知将不再执行
+             -->
+
+            <!--<aop:after-returning method="commit" pointcut-ref="perform" returning="val"/>-->
+
+            <!--
+                最终通知
+                   *   不能得到目标方法的返回值
+                   *   无论目标方法是否有异常，最终通知都将执行
+                   *   资源的关闭、连接的释放写在最终通知里
+             -->
+            <!--<aop:after pointcut-ref="perform" method="finalMethod"/>-->
+
+            <!--
+                    环绕通知
+                       *  ProceedingJoinPoint的proceed方法就是目标对象的目标方法
+                       *  环绕通知可以控制目标对象目标方法执行
+             -->
+            <!--
+            <aop:around method="aroundMethod" pointcut-ref="perform"/>
+             -->
+            <!--
+                    异常通知
+                      在异常通知中获取目标方法抛出的异常
+             -->
+            <!--<aop:after-throwing method="throwingMethod" pointcut-ref="perform" throwing="except"/>-->
+        </aop:aspect>
+    </aop:config>
+</beans>
