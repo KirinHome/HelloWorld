@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+   <!-- 
+   		1、导入springAOP的注解解析器
+   			<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+   		2、导入类扫描的注解解析器
+   		    <context:component-scan base-package="cn.itcast.spring0401.aop.annotation"></context:component-scan>
+    -->
+    <!-- 
+    	原理：
+    	  当启动spring容器的时候，spring容器解析配置文件
+    	     *  就会解析到类扫描的注解解析器，会在base-package指定的包及子包中扫描所有的类，看类上是否
+ 				有@Compontent,@Service,@Controller,@Repository注解，
+ 				 *  如果有，则spring容器创建该类的实例
+ 		     *  解析到aop的注解解析器，会在纳入spring管理的bean中，看哪个类上面是否有@Aspect注解
+ 		         *  如果有，则会在方法中查找@Pointcut，就会找到切入点表达式，根据切入点表达式，
+ 		            在纳入spring范围的bean内查找，看哪个bean符合切入点表达式，如果符合则创建代理对象
+ 		  当客户端访问某一个bean时，如果该bean有代理对象，则返回代理对象，否则返回该bean的对象
+     -->
+    <aop:aspectj-autoproxy/>
+    <context:component-scan base-package="com.lxk.spring.aop.annotation"/>
+</beans>
