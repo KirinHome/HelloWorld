@@ -56,7 +56,7 @@
                    *  如果目标方法中有可能存在异常，异常确实发生了，这个时候，后置通知将不再执行
              -->
 
-            <!--<aop:after-returning method="commit" pointcut-ref="perform" returning="val"/>-->
+            <aop:after-returning method="commit" pointcut-ref="perform" returning="val"/>
 
             <!--
                 最终通知
@@ -64,21 +64,19 @@
                    *   无论目标方法是否有异常，最终通知都将执行
                    *   资源的关闭、连接的释放写在最终通知里
              -->
-            <!--<aop:after pointcut-ref="perform" method="finalMethod"/>-->
+            <aop:after pointcut-ref="perform" method="finalMethod"/>
 
             <!--
                     环绕通知
                        *  ProceedingJoinPoint的proceed方法就是目标对象的目标方法
                        *  环绕通知可以控制目标对象目标方法执行
              -->
-            <!--
             <aop:around method="aroundMethod" pointcut-ref="perform"/>
-             -->
             <!--
                     异常通知
                       在异常通知中获取目标方法抛出的异常
              -->
-            <!--<aop:after-throwing method="throwingMethod" pointcut-ref="perform" throwing="except"/>-->
+            <aop:after-throwing method="throwingMethod" pointcut-ref="perform" throwing="except"/>
         </aop:aspect>
     </aop:config>
 </beans>

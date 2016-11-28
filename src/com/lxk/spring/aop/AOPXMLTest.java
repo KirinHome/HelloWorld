@@ -20,7 +20,7 @@ public class AOPXMLTest {
 	@Test
 	public void test() throws Exception{
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/lxk/spring/aop/applicationContext.xml");
-		PersonDao personDao = (PersonDao)context.getBean("personDao");
+		PersonDaoImpl personDao = (PersonDaoImpl)context.getBean("personDao");
 		personDao.getPerson();
 	}
 }

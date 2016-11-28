@@ -34,17 +34,22 @@ public class Transaction {
         }
     }
 
+    /**
+     * 最终通知
+     */
     public void finalMethod() {
         System.out.println("最终通知");
     }
 
-    public void aroundMethod(ProceedingJoinPoint joinPoint) {//环绕通知
+    /**
+     * 环绕通知
+     */
+    public void aroundMethod(ProceedingJoinPoint joinPoint) {
         try {
             System.out.println("around method");
             joinPoint.proceed();//调用目标类的目标方法
         } catch (Throwable e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 

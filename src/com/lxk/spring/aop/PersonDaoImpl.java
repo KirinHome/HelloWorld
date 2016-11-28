@@ -7,14 +7,12 @@ import java.util.List;
 /**
  * 目标对象:实现目标接口
  */
-public class PersonDaoImpl implements PersonDao {
+public class PersonDaoImpl {
 
-    @Override
     public void deletePerson() {
         System.out.println("delete perosn");
     }
 
-    @Override
     public List<Person> getPerson() throws Exception {
         List<Person> personList = Lists.newArrayList();
         Person person1 = new Person();
@@ -29,12 +27,10 @@ public class PersonDaoImpl implements PersonDao {
         return personList;
     }
 
-    @Override
     public void savePerson() {
         System.out.println("delete perosn");
     }
 
-    @Override
     public void updatePerson() {
         System.out.println("delete perosn");
     }
