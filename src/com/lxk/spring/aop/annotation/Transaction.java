@@ -61,7 +61,7 @@ public class Transaction {
         try {
             obj = joinPoint.proceed();
         } catch (Throwable e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         System.out.println("around method");
         return obj;

@@ -14,14 +14,14 @@
    		2、导入类扫描的注解解析器
    		    <context:component-scan base-package="cn.itcast.spring0401.aop.annotation"></context:component-scan>
     -->
-    <!-- 
+    <!--
     	原理：
     	  当启动spring容器的时候，spring容器解析配置文件
     	     *  就会解析到类扫描的注解解析器，会在base-package指定的包及子包中扫描所有的类，看类上是否
  				有@Compontent,@Service,@Controller,@Repository注解，
  				 *  如果有，则spring容器创建该类的实例
  		     *  解析到aop的注解解析器，会在纳入spring管理的bean中，看哪个类上面是否有@Aspect注解
- 		         *  如果有，则会在方法中查找@Pointcut，就会找到切入点表达式，根据切入点表达式，
+ 		         *  如果有，则会在这个类的所有方法中查找@Pointcut，就会找到切入点表达式，根据切入点表达式，
  		            在纳入spring范围的bean内查找，看哪个bean符合切入点表达式，如果符合则创建代理对象
  		  当客户端访问某一个bean时，如果该bean有代理对象，则返回代理对象，否则返回该bean的对象
      -->

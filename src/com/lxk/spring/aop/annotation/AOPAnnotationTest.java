@@ -12,7 +12,7 @@ public class AOPAnnotationTest {
     public void test() throws Exception {
         ApplicationContext context = new ClassPathXmlApplicationContext("com/lxk/spring/aop/annotation/applicationContext.xml");
         PersonDao personDao = (PersonDao) context.getBean("personDaoImpl");
-        personDao.deletePerson();
+        personDao.getPerson();
         //List<Person> personList = personDao.getPerson("sss");
         //System.out.println(personList.size());
     }

@@ -15,13 +15,13 @@ public class PersonDaoImpl implements PersonDao {
         System.out.println("delete perosn");
     }
 
-    public List<Person> getPerson(String s) throws Exception {
+    public List<Person> getPerson() throws Exception {
         List<Person> personList = Lists.newArrayList();
         Person person1 = new Person();
         person1.setPid(1L);
         person1.setPname("person1");
 
-        int a = 1 / 0;
+        //int a = 1 / 0;
 
         System.out.println("get person");
         personList.add(person1);
