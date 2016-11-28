@@ -6,11 +6,11 @@
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
-    <bean id="personDao" class="com.lxk.spring.aop.PersonDaoImpl"/>
-    <bean id="transaction" class="com.lxk.spring.aop.Transaction"/>
-    <bean id="logger" class="com.lxk.spring.aop.Logger"/>
+    <bean id="personDao" class="com.lxk.spring.aop.xml.PersonDaoImpl"/>
+    <bean id="transaction" class="com.lxk.spring.aop.xml.Transaction"/>
+    <bean id="logger" class="com.lxk.spring.aop.xml.Logger"/>
     <aop:config>
-        <aop:pointcut id="perform" expression="execution(* com.lxk.spring.aop.PersonDaoImpl.*(..))"/>
+        <aop:pointcut id="perform" expression="execution(* com.lxk.spring.aop.xml.PersonDaoImpl.*(..))"/>
         <aop:aspect ref="transaction">
             <aop:before method="beginTransaction" pointcut-ref="perform"/>
         </aop:aspect>

@@ -13,9 +13,9 @@
 		(也没有拦截器的引入，有的只是aop的配置，如上的3、)
      -->
     <!-- 目标类 -->
-    <bean id="personDao" class="com.lxk.spring.aop.PersonDaoImpl"/>
+    <bean id="personDao" class="com.lxk.spring.aop.xml.PersonDaoImpl"/>
     <!-- 切面的声明 -->
-    <bean id="transaction" class="com.lxk.spring.aop.Transaction"/>
+    <bean id="transaction" class="com.lxk.spring.aop.xml.Transaction"/>
     <!-- aop配置 -->
     <aop:config>
         <!--
@@ -44,7 +44,7 @@
                    返回值是任意类型，在cn.itcast.oa包及子包下所有的以update开头的参数为两个，第一个为任意类型
                    第二个为String类型的所有类的所有的方法
          -->
-        <aop:pointcut expression="execution(* com.lxk.spring.aop.PersonDaoImpl.*(..))" id="perform"/>
+        <aop:pointcut expression="execution(* com.lxk.spring.aop.xml.PersonDaoImpl.*(..))" id="perform"/>
         <!-- 配置切面(切面里面配置通知)—— ref 指向声明切面的类 -->
         <aop:aspect ref="transaction">
             <!-- 前置通知pointcut-ref 引用一个切入点 -->

@@ -1,4 +1,4 @@
-package com.lxk.spring.aop;
+package com.lxk.spring.aop.xml;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;

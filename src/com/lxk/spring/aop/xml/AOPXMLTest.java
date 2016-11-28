@@ -1,4 +1,4 @@
-package com.lxk.spring.aop;
+package com.lxk.spring.aop.xml;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -19,7 +19,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AOPXMLTest {
 	@Test
 	public void test() throws Exception{
-		ApplicationContext context = new ClassPathXmlApplicationContext("com/lxk/spring/aop/applicationContext.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("com/lxk/spring/aop/xml/applicationContext.xml");
 		PersonDaoImpl personDao = (PersonDaoImpl)context.getBean("personDao");
 		personDao.getPerson();
 	}
