@@ -8,9 +8,7 @@ public class PersonDaoTest {
 	@Test
 	public void test(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/lxk/spring/jdbc/applicationContext.xml");
-		
 		PersonDao personDao = (PersonDao)context.getBean("personDao");
-	 
 		personDao.insertPerson();
 	}
 }
