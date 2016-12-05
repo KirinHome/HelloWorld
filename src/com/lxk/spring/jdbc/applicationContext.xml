@@ -44,9 +44,7 @@
 
 	<!--导入属性文件,使用el表达式。-->
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations">
-			<value>classpath:com/lxk/spring/jdbc/jdbc.properties</value>
-		</property>
+		<property name="locations" value="classpath:com/lxk/spring/jdbc/jdbc.properties"/>
 	</bean>
 
 	<bean id="dataSource1" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
@@ -57,8 +55,6 @@
 	</bean>
 
 	<bean id="personDao" class="com.lxk.spring.jdbc.PersonDaoImpl">
-		<property name="dataSource">
-			<ref bean="dataSource1"/>
-		</property>
+		<property name="dataSource" ref="dataSource1"/>
 	</bean>
 </beans>
