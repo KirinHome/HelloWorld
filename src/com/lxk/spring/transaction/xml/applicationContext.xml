@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- 
+		配置aop
+		* 目标类
+		* 通知(原来是该配置切面了。切面是一个类，通知是里面的各个方法。在spring里，切面已经OK了，现在只需要添加通知)
+		* 进行AOP的配置
+	-->
+
+	<!--引入配置文件和dataSource-->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:com/lxk/spring/transaction/xml/jdbc.properties"/>
+	</bean>
+	<bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${driverClassName}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${user.name}" />
+		<property name="password" value="${user.password}" />
+	</bean>
+
+	<!-- 目标类 -->
+	<bean id="personDao" class="com.lxk.spring.transaction.xml.PersonDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="personService" class="com.lxk.spring.transaction.xml.PersonServiceImpl">
+			<property name="personDao" ref="personDao"/>
+	</bean>
+	
+	<!-- 
+		通知
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	 -->
+	 <!-- 
+	 	id为通知的唯一标识
+	 	transaction-manager 事务管理器
+	  -->
+	  <!-- 
+	  	   事务管理器
+	  	     作用：告诉spring容器用哪种技术进行事务的管理
+	   -->
+	   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	   		<property name="dataSource" ref="dataSource"/>
+	   </bean>
+	 <tx:advice id="tx" transaction-manager="transactionManager">
+	 	<tx:attributes>
+	 		<!-- 
+	 			name
+	 			   方法的名称
+	 			    save* 以save开头的方法
+	 			    update*  以update开头的方法
+	 			    *  除去上面的以外的其他的方法
+	 		    isolation
+	 		        隔离机制
+	 		    propagation  
+	 		        事务的传播机制
+	 		    read-only
+	 		       数据的只读属性的设置
+	 		      一般情况下查询设置为true,其他的情况都为false
+	 		 -->
+	 		<tx:method name="save*" isolation="DEFAULT" propagation="REQUIRED" read-only="false"/>
+	 		<tx:method name="*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
+	 	</tx:attributes>
+	 </tx:advice>
+
+	<!--进行AOP的配置-->
+	 <aop:config>
+		 <!--切入点表达式-->
+	 	 <aop:pointcut expression="execution(* com.lxk.spring.transaction.xml.PersonServiceImpl.*(..))" id="perform"/>
+	 	 <!-- 
+	 	 	配置通知
+	 	 		1、指定通知
+	 	 		2、指向切入点表达式
+	 	  -->
+	 	 <aop:advisor advice-ref="tx" pointcut-ref="perform"/>
+	 </aop:config>
+</beans>
