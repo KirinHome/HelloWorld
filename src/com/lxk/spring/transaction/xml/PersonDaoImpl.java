@@ -2,7 +2,6 @@ package com.lxk.spring.transaction.xml;
 
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
-
 public class PersonDaoImpl extends JdbcDaoSupport implements PersonDao{
 
 	public void savePerson() {
