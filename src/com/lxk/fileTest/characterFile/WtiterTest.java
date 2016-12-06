@@ -1,4 +1,4 @@
-package com.lxk.fileTest;
+package com.lxk.fileTest.characterFile;
 
 /**
  * Created by lxk on 2016/11/19

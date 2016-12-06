@@ -1,4 +1,4 @@
-package com.lxk.fileTest;
+package com.lxk.fileTest.characterFile;
 
 import java.io.FileReader;
 import java.io.IOException;

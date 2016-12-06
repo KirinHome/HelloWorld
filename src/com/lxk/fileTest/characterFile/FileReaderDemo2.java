@@ -1,4 +1,4 @@
-package com.lxk.fileTest;
+package com.lxk.fileTest.characterFile;
 /*
 第二种方式：通过字符数组进行读取。
 */
