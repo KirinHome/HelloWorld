@@ -2,6 +2,7 @@ package com.lxk.dateFormatTest;
 
 import com.lxk.test.TimesUtils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -17,17 +18,18 @@ public class Format {
         //result.put("date", nowDate);//服务器时间 1478793600
         long minute = (nowDate / 1000 - currentFrom) / 60;
 
-        System.out.println(minute);
+        Date s = new Date();
+        //System.out.println(minute);
 
-
-
-
-
-
-
-
-
-
+        String date = "2016-12-07T16:00:00.000Z";
+        date = date.replace("Z", " UTC");//注意在 UTC 字符串前面还有个空格。不然异常。
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS Z");
+        try {
+            Date d = sdf.parse(date);
+            System.out.println("Z日期: "+d);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
 
         //dateTest();
