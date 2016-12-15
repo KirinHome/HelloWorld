@@ -10,6 +10,22 @@ import java.util.Date;
  */
 class Test {
     public static void main(String[] args) {
+        String color = "ss";
+        switch (color) {
+            case "ss":
+                System.out.println("ss");
+                break;
+            case "yy":
+                System.out.println("yy");
+                break;
+            case "qq":
+                System.out.println("qq");
+                break;
+
+            default:
+                System.out.println("default");
+        }
+
         Date ss = new Date();
         //Date aw = Calendar.getInstance().getTime();//获得时间的另一种方式，测试效果一样
         testTime(ss);
