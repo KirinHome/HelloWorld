@@ -20,7 +20,7 @@ public class EnumTest {
         }
         System.out.println("------------------");
         for (TYPE type : TYPE.values()) {
-            System.out.println(type + " " + type.getTypeName() + "  ordinal  " + type.ordinal());
+            System.out.println("type = " + type + "    type.name = " + type.name() + "   typeName = " + type.getTypeName() + "   ordinal = " + type.ordinal());
         }
     }
 
@@ -54,18 +54,10 @@ public class EnumTest {
      * 常用类型(带参数的枚举常量，这个只是在书上不常见，实际使用还是很多的，看懂这个，使用就不是问题啦。)
      */
     private enum TYPE {
-        /**
-         * 防火墙
-         */
         FIREWALL("firewall"),
-        /**
-         * 加密机
-         */
         SECRET("secretMac"),
-        /**
-         * 负载均衡
-         */
         BALANCE("f5");
+
         private String typeName;
 
         TYPE(String typeName) {
