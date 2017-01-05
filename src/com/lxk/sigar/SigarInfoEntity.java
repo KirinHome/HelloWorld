@@ -10,9 +10,7 @@ public class SigarInfoEntity {
     private String name;
 
 
-    public SigarInfoEntity() {
-
-    }
+    public SigarInfoEntity() { }
 
     public SigarInfoEntity(String value, String name) {
         this.value = value;

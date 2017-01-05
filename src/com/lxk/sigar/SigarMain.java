@@ -29,7 +29,6 @@ public class SigarMain {
             for (SigarInfoEntity sigarInfo : sigarInfos) {
                 sigarStringBuffer.append(sigarInfo.getName()).append(":").append(sigarInfo.getValue()).append("\r\n");
             }
-
             System.out.println(sigarStringBuffer.toString());
         } catch (Exception e) {
             e.printStackTrace();

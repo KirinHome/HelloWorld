@@ -29,61 +29,49 @@ public class SigarUtils {
      */
     public static List<SigarInfoEntity> getJvmInfos() throws Exception {
         List<SigarInfoEntity> jvmInfoList = new ArrayList<>();
-        Runtime r = Runtime.getRuntime();
-        // 系统配置属性
-        Properties sysProps = System.getProperties();
+
+        //系统环境变量信息map
+        Map<String, String> envInfoMap = System.getenv();
+        jvmInfoList.add(new SigarInfoEntity(envInfoMap.get("USERNAME"), "获取用户名"));
+        jvmInfoList.add(new SigarInfoEntity(envInfoMap.get("COMPUTERNAME"), "获取计算机名"));
+        jvmInfoList.add(new SigarInfoEntity(envInfoMap.get("USERDOMAIN"), "获取计算机域名"));
+
         // java对ip封装的对象
         InetAddress addr = InetAddress.getLocalHost();
-
-        Map<String, String> envInfoMap = System.getenv();
-        String userName = envInfoMap.get("USERNAME");// 获取用户名
-        String computerName = envInfoMap.get("COMPUTERNAME");// 获取计算机名
-        String userDomain = envInfoMap.get("USERDOMAIN");// 获取计算机域名
-
-        jvmInfoList.add(new SigarInfoEntity(userName, "获取用户名"));
-        jvmInfoList.add(new SigarInfoEntity(computerName, "获取计算机名"));
-        jvmInfoList.add(new SigarInfoEntity(userDomain, "获取计算机域名"));
-
         jvmInfoList.add(new SigarInfoEntity(addr.getHostAddress(), "获取Ip"));
         jvmInfoList.add(new SigarInfoEntity(addr.getHostName(), "获取主机名称"));
 
+        Runtime r = Runtime.getRuntime();
         jvmInfoList.add(new SigarInfoEntity(String.valueOf(r.totalMemory()), "JVM总内存"));
         jvmInfoList.add(new SigarInfoEntity(String.valueOf(r.freeMemory()), "JVM剩余内存"));
         jvmInfoList.add(new SigarInfoEntity(String.valueOf(r.availableProcessors()), "jvm处理器个数"));
 
+        // 系统配置属性
+        Properties sysProps = System.getProperties();
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.version"), "Java的运行环境版本"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.vendor"), "Java的运行环境供应商"));
-
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.vendor.url"), "Java供应商的URL"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.home"), "Java的安装路径"));
-
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.vm.specification.version"), "Java的虚拟机规范版本"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.vm.specification.vendor"), "Java的虚拟机规范供应商"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.vm.specification.name"), "Java的虚拟机规范名称"));
-
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.vm.version"), "Java的虚拟机实现版本"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.vm.vendor"), "Java的虚拟机实现供应商"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.vm.name"), "Java的虚拟机实现名称"));
-
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.specification.version"), "Java运行时环境规范版本"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.specification.vendor"), "Java运行时环境规范供应商"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.specification.name"), "Java的虚拟机规范名称"));
-
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.class.version"), "Java的类格式版本号"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.class.path"), "Java的类路径"));
-
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.library.path"), "加载库时搜索的路径列表"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.io.tmpdir"), "默认的临时文件路径"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("java.ext.dirs"), "一个或多个扩展目录的路径"));
-
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("os.name"), "操作系统的名称"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("os.arch"), "操作系统的构架"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("os.version"), "操作系统的版本"));
-
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("file.separator"), "文件分隔符"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("path.separator"), "路径分隔符"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("line.separator"), "行分隔符"));
-
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("user.name"), "用户的账户名称"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("user.home"), "用户的主目录"));
         jvmInfoList.add(new SigarInfoEntity(sysProps.getProperty("user.dir"), "用户的当前工作目录"));
@@ -129,6 +117,7 @@ public class SigarUtils {
         memoryInfoList.add(new SigarInfoEntity(mem.getTotal() / 1024L + "K av", "内存总量"));
         memoryInfoList.add(new SigarInfoEntity(mem.getUsed() / 1024L + "K used", "当前内存使用量"));
         memoryInfoList.add(new SigarInfoEntity(mem.getFree() / 1024L + "K free", "当前内存剩余量"));
+
         Swap swap = getInstance().getSwap();
         memoryInfoList.add(new SigarInfoEntity(swap.getTotal() / 1024L + "K av", "交换区总量"));
         memoryInfoList.add(new SigarInfoEntity(swap.getUsed() / 1024L + "K used", "当前交换区使用量"));
@@ -176,8 +165,11 @@ public class SigarUtils {
             } catch (SigarException e) {//当fileSystem.getType()为5时会出现该异常——此时文件系统类型为光驱
                 System.out.println("----------------------------------------------------------------------------------");
                 System.out.println(fs.getDirName());
+                //经测试，会输出个G:\ 我表示是相当的不解。后来发现是我笔记本的光驱，吐血。。。这也行。怪不得原来这代码是OK的
+                //估计是台式机，还是没光驱的台式机。
                 continue;
             }
+            //下面单独这行代码就会报错：org.hyperic.sigar.SigarException: The device is not ready.
             //usage = getInstance().getFileSystemUsage(fs.getDirName());
             switch (fs.getType()) {
                 case 0: // TYPE_UNKNOWN ：未知
@@ -185,7 +177,6 @@ public class SigarUtils {
                 case 1: // TYPE_NONE
                     break;
                 case 2: // TYPE_LOCAL_DISK : 本地硬盘
-
                     fileInfoList.add(new SigarInfoEntity(usage.getTotal() + "KB", "文件系统总大小" + fs.getDevName()));
                     fileInfoList.add(new SigarInfoEntity(usage.getFree() + "KB", "文件系统剩余大小" + fs.getDevName()));
                     fileInfoList.add(new SigarInfoEntity(usage.getAvail() + "KB", "文件系统可用大小" + fs.getDevName()));
