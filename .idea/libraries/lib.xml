@@ -8,6 +8,8 @@
       <root url="jar://$USER_HOME$/.ideaLibSources/guava-19.0-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.5-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/sigar-1.6.4-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sigar-1.6.4-sources.jar!/" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
   </library>
