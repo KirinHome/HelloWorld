@@ -7,6 +7,11 @@ import java.util.List;
  */
 public class Lxk {
     public static void main(String[] args) {
+        String aw = "";
+        String[] aaa = aw.split(",");
+        System.out.println(aaa.length);
+        System.out.println("------------------");
+
         System.out.println(1/10);
         String s = "bbbaaa";
         System.out.println(s.replace("*",".*"));
