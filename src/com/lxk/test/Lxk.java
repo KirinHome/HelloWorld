@@ -7,6 +7,21 @@ import java.util.List;
  */
 public class Lxk {
     public static void main(String[] args) {
+        String order = "1128";
+        if (order.equals("1128")) {
+            testTypeCast();
+        } else {
+            simpleTest();
+        }
+    }
+
+    private static void testTypeCast() {
+        long num = 8235098112L;
+        float result = ((float) num)/(1024L * 1024L * 1024L);
+        System.out.println(result);
+    }
+
+    private static void simpleTest() {
         String aw = "";
         String[] aaa = aw.split(",");
         System.out.println(aaa.length);
