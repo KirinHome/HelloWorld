@@ -1,5 +1,7 @@
 package com.lxk.test;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -16,9 +18,16 @@ public class Lxk {
     }
 
     private static void testTypeCast() {
-        long num = 8235098112L;
-        float result = ((float) num)/(1024L * 1024L * 1024L);
-        System.out.println(result);
+        float scale = 34.236323F;
+        DecimalFormat fnum = new DecimalFormat("##0.00");
+        long num = 1;
+        float result = ((float) num) / (1024L * 1024L * 1024L);
+        String dd = fnum.format(result);
+        System.out.println(dd);
+
+        //BigDecimal b = new BigDecimal(result);
+        //float f1 = b.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
+        //System.out.println(f1);
     }
 
     private static void simpleTest() {
