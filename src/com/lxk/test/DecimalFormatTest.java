@@ -19,12 +19,13 @@ public class DecimalFormatTest {
         float result = ((float) num) / (1024L * 1024L * 1024L);
         System.out.println(result);
         System.out.println(format.format(result));
-        System.out.println("-------------我是分界线-------------");
+        System.out.println("-------------我是分界线---1----------");
         showFormat(scale);
-        System.out.println("-------------我是分界线-------------");
+        System.out.println("-------------我是分界线---2----------");
         showFormat(result);
+        System.out.println("-------------我是分界线---3----------");
         long c = 299792458L;
-
+        showFormat((float) c);
     }
 
     private static void showFormat(float value) {
