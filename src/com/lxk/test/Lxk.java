@@ -1,6 +1,7 @@
 package com.lxk.test;
 
-import java.math.BigDecimal;
+import com.lxk.model.Dog;
+
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -10,10 +11,21 @@ import java.util.List;
 public class Lxk {
     public static void main(String[] args) {
         String order = "1128";
-        if (order.equals("1128")) {
+        if (!order.equals("1128")) {
             testTypeCast();
-        } else {
             simpleTest();
+        } else {
+            testJavaBeanArray();
+        }
+    }
+
+    /**
+     * 测试对象数组的默认情况
+     */
+    private static void testJavaBeanArray() {
+        Dog[] dogs = new Dog[10];
+        for (Dog dog : dogs) {
+            System.out.println(dog);
         }
     }
 
