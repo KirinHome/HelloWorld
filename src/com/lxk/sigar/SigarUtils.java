@@ -13,6 +13,7 @@ import java.util.Properties;
  */
 public class SigarUtils {
     private static Sigar sigar;
+    private static long unit = (1024L * 1024L * 1024L);
 
     /**
      * 获取sigar实体
@@ -114,7 +115,7 @@ public class SigarUtils {
     public static List<SigarInfoEntity> getMemoryInfos() throws SigarException {
         List<SigarInfoEntity> memoryInfoList = new ArrayList<>();
         Mem mem = getInstance().getMem();
-        memoryInfoList.add(new SigarInfoEntity(mem.getTotal() / 1024L + "K av", "内存总量"));
+        memoryInfoList.add(new SigarInfoEntity(((float)mem.getTotal() / 1024L / 1024L / 1024L)+ "GB", "内存总量"));
         memoryInfoList.add(new SigarInfoEntity(mem.getUsed() / 1024L + "K used", "当前内存使用量"));
         memoryInfoList.add(new SigarInfoEntity(mem.getFree() / 1024L + "K free", "当前内存剩余量"));
 
