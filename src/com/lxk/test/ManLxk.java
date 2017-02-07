@@ -16,8 +16,30 @@ public class ManLxk extends Person {
     }
 
     public static void main(String[] args) {
-        testResult();
-        testSplit();
+        //testResult();
+        //testSplit();
+        testOneNumber();
+    }
+
+    private static void testOneNumber() {
+        Integer s = 2;
+        int result = 0;
+        String tempString;
+        char[] temp;
+        String one = "1";
+        char oneChar = '1';
+        for (Integer i = 1; i < s + 1; i++) {
+            tempString = i.toString();
+            temp = tempString.toCharArray();
+            if (tempString.contains(one)) {
+                for (int j = 0; j < temp.length; j++) {
+                    if (oneChar == temp[j]) {
+                        result++;
+                    }
+                }
+            }
+        }
+        System.out.println(result);
     }
 
     private static void testSplit() {
