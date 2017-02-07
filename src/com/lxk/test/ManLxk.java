@@ -32,8 +32,8 @@ public class ManLxk extends Person {
             tempString = i.toString();
             temp = tempString.toCharArray();
             if (tempString.contains(one)) {
-                for (int j = 0; j < temp.length; j++) {
-                    if (oneChar == temp[j]) {
+                for (char aTemp : temp) {
+                    if (oneChar == aTemp) {
                         result++;
                     }
                 }
