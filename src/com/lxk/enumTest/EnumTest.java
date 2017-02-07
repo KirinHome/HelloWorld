@@ -19,8 +19,8 @@ public class EnumTest {
             System.out.println(simpleEnum + "  ordinal  " + simpleEnum.ordinal());
         }
         System.out.println("------------------");
-        for (TYPE type : TYPE.values()) {
-            System.out.println("type = " + type + "    type.name = " + type.name() + "   typeName = " + type.getTypeName() + "   ordinal = " + type.ordinal());
+        for (TypeEnum typeEnum : TypeEnum.values()) {
+            System.out.println("type = " + typeEnum + "    type.name = " + typeEnum.name() + "   typeName = " + typeEnum.getTypeName() + "   ordinal = " + typeEnum.ordinal());
         }
     }
 
@@ -29,8 +29,8 @@ public class EnumTest {
      */
     private static void useEnumInJava() {
         String typeName = "f5";
-        TYPE type = TYPE.fromTypeName(typeName);
-        if (TYPE.BALANCE.equals(type)) {
+        TypeEnum typeEnum = TypeEnum.fromTypeName(typeName);
+        if (TypeEnum.BALANCE.equals(typeEnum)) {
             System.out.println("根据字符串获得的枚举类型实例跟枚举常量一致");
         } else {
             System.out.println("大师兄代码错误");
@@ -53,14 +53,14 @@ public class EnumTest {
     /**
      * 常用类型(带参数的枚举常量，这个只是在书上不常见，实际使用还是很多的，看懂这个，使用就不是问题啦。)
      */
-    private enum TYPE {
+    private enum TypeEnum {
         FIREWALL("firewall"),
         SECRET("secretMac"),
         BALANCE("f5");
 
         private String typeName;
 
-        TYPE(String typeName) {
+        TypeEnum(String typeName) {
             this.typeName = typeName;
         }
 
@@ -69,10 +69,10 @@ public class EnumTest {
          *
          * @param typeName 类型名称
          */
-        public static TYPE fromTypeName(String typeName) {
-            for (TYPE type : TYPE.values()) {
-                if (type.getTypeName().equals(typeName)) {
-                    return type;
+        public static TypeEnum fromTypeName(String typeName) {
+            for (TypeEnum typeEnum : TypeEnum.values()) {
+                if (typeEnum.getTypeName().equals(typeName)) {
+                    return typeEnum;
                 }
             }
             return null;
