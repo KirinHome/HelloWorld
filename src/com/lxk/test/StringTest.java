@@ -1,5 +1,9 @@
 package com.lxk.test;
 
+import com.google.common.collect.Lists;
+
+import java.util.List;
+
 /**
  * 字符串测试Class
  * <p>
@@ -7,7 +11,23 @@ package com.lxk.test;
  */
 public class StringTest {
     public static void main(String[] args) {
-        testStringPool();
+        String transmitValue = "初始值";
+        List<String> list = Lists.newArrayList();
+        list.add("0");
+        testTransmitValue(transmitValue,list) ;
+        System.out.println(transmitValue);
+        System.out.println(list.toString());
+        //testStringPool();
+    }
+
+    /**
+     * 测试字符串和集合在函数之间的传值问题,解决值传递和地址传递的疑惑.
+     */
+    private static void testTransmitValue(String transmitValue, List<String> list) {
+        transmitValue += "修改的痕迹";
+        list.add("1");
+        list.add("2");
+        list.add("3");
     }
 
     /**
