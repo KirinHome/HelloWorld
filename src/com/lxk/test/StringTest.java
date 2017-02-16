@@ -25,11 +25,13 @@ public class StringTest {
             sbf.append("这是第").append(i).append("个; ");
         }
         System.out.println(sbf);
+        System.out.println(sbf.indexOf("7"));
         StringBuilder sbd = new StringBuilder();
         for (int i = 0; i < 10; i++) {
             sbd.append("这是第").append(i).append("个; ");
         }
         System.out.println(sbd);
+        System.out.println(sbd.indexOf("7"));
     }
 
     /**
