@@ -11,6 +11,31 @@ import java.util.List;
  */
 public class StringTest {
     public static void main(String[] args) {
+        //testValueAndAddressTransmit();
+        testStringBufferAndStringBuilder();
+        //testStringPool();
+    }
+
+    /**
+     *
+     */
+    private static void testStringBufferAndStringBuilder() {
+        StringBuffer sbf = new StringBuffer();
+        for (int i = 0; i < 10; i++) {
+            sbf.append("这是第").append(i).append("个; ");
+        }
+        System.out.println(sbf);
+        StringBuilder sbd = new StringBuilder();
+        for (int i = 0; i < 10; i++) {
+            sbd.append("这是第").append(i).append("个; ");
+        }
+        System.out.println(sbd);
+    }
+
+    /**
+     * 测试值传递和地址传递
+     */
+    private static void testValueAndAddressTransmit() {
         String transmitValue = "初始值";
         String transmitValueNew = new String("new 出来的字符串");
         Integer integer = 100;
@@ -21,7 +46,6 @@ public class StringTest {
         System.out.println(transmitValueNew);
         System.out.println(list.toString());
         System.out.println(integer);
-        //testStringPool();
     }
 
     /**
