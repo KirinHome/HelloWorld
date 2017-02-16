@@ -1,5 +1,6 @@
 package com.lxk.test;
 
+import com.lxk.model.CodeBlockModel;
 import com.lxk.model.Dog;
 
 import java.text.DecimalFormat;
@@ -14,9 +15,19 @@ public class Lxk {
         if (!order.equals("1128")) {
             testTypeCast();
             simpleTest();
-        } else {
             testJavaBeanArray();
+        } else {
+            testCodeBlock();
         }
+    }
+
+    /**
+     * 测试代码块的执行
+     */
+    private static void testCodeBlock() {
+        CodeBlockModel codeBlockModel1 = new CodeBlockModel();
+        CodeBlockModel codeBlockModel2 = new CodeBlockModel("cms","18","student");
+
     }
 
     /**
