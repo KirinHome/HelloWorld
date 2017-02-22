@@ -17,6 +17,9 @@ public class StringTest {
         //testStringPool();
     }
 
+    /**
+     * 测试代码中的换行："\r\n"和<br>
+     */
     private static void testStringNewLine() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 100; i++) {
