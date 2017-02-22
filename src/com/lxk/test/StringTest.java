@@ -11,13 +11,22 @@ import java.util.List;
  */
 public class StringTest {
     public static void main(String[] args) {
+        testStringNewLine();
         //testValueAndAddressTransmit();
-        testStringBufferAndStringBuilder();
+        //testStringBufferAndStringBuilder();
         //testStringPool();
     }
 
+    private static void testStringNewLine() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 100; i++) {
+            sb.append("大").append("\r\n");
+        }
+        System.out.println(sb.toString());
+    }
+
     /**
-     *
+     * StringBuffer和StringBuilder的使用
      */
     private static void testStringBufferAndStringBuilder() {
         StringBuffer sbf = new StringBuffer();
