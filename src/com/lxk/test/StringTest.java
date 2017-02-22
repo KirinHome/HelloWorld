@@ -11,10 +11,13 @@ import java.util.List;
  */
 public class StringTest {
     public static void main(String[] args) {
-        testStringNewLine();
-        //testValueAndAddressTransmit();
-        //testStringBufferAndStringBuilder();
-        //testStringPool();
+        if (false) {
+            testValueAndAddressTransmit();
+            testStringBufferAndStringBuilder();
+            testStringPool();
+        } else {
+            testStringNewLine();
+        }
     }
 
     /**
