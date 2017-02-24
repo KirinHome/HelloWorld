@@ -8,9 +8,26 @@ package com.lxk.tryCatchFinallyTest;
 public class TryCatchFinallyTest {
     public static void main(String[] args) {
         testFunc1();
+        System.out.println(testFunc2());
     }
+
     /**
-     *
+     * try里面return的结果在finally中修改有影响吗
+     */
+    private static int testFunc2() {
+        int x = 1;
+        try {
+            return x;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            ++x;
+        }
+        return x;
+    }
+
+    /**
+     * try catch finally 中各自return时，函数执行结果。
      */
     private static int testFunc1() {
         String s = null;

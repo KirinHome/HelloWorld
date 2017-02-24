@@ -17,9 +17,11 @@ import java.lang.ref.WeakReference;
 import java.util.*;
 
 /**
+ * 最开始新建的测试类，各种测试都有。
+ * <p>
  * Created by lxk on 2016/8/31
  */
-class CmsHome {
+public class NoGroupTest {
     public static void main(String[] args) {
         if (getNum() == 1) {
             testListSort();
@@ -36,7 +38,6 @@ class CmsHome {
             testFileConstructor();
             testFinal();
             testValueOfAndParseX();
-            testIntegerCache();
             testHashSet();
             testArrayReverse();
             testSortTwoSortedArray();
@@ -129,30 +130,10 @@ class CmsHome {
     /**
      * 测试HashSet原理
      */
-    private static void testHashSet(){
+    private static void testHashSet() {
         Set<String> s = Sets.newHashSet();
         System.out.println(s);
         Maps.newHashMapWithExpectedSize(3);
-    }
-
-    /**
-     * 测试 Integer的缓存 IntegerCache.cache
-     */
-    private static void testIntegerCache() {
-        System.out.println("---int---");
-        int a = 127, b = 127;
-        System.out.println(a == b);         //true
-        a = 128;
-        b = 128;
-        System.out.println(a == b);         //true
-
-        System.out.println("---Integer---");
-        Integer aa = 127, bb = 127;
-        System.out.println(aa == bb);       //true
-        aa = 128;
-        bb = 128;
-        System.out.println(aa == bb);       //false
-        System.out.println(aa.equals(bb));  //true
     }
 
     /**
@@ -311,7 +292,7 @@ class CmsHome {
     /**
      * 输出指定目录下的所有文件名称包括目录名称
      */
-    private static void testOutAllFile(){
+    private static void testOutAllFile() {
         File dir = new File("d:");
         String[] children = dir.list();
         if (children == null) {
@@ -349,7 +330,7 @@ class CmsHome {
      * 测试逐行读txt文件并正确关闭文件流
      */
     private static void testFileStream() {
-        final Logger LOG = LoggerFactory.getLogger(CmsHome.class);
+        final Logger LOG = LoggerFactory.getLogger(NoGroupTest.class);
         InputStreamReader read = null;
         BufferedReader bufferedReader = null;
         String serverFile = "D:/ss.txt";
@@ -440,7 +421,7 @@ class CmsHome {
      * 测试正确关闭文件流
      */
     private static void testCloseFileStream() {
-        final Logger LOG = LoggerFactory.getLogger(CmsHome.class);
+        final Logger LOG = LoggerFactory.getLogger(NoGroupTest.class);
         String fileName = "";
         InputStream inputStream = null;
         try {
