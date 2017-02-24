@@ -42,16 +42,6 @@ public class ManLxk extends Person {
         System.out.println(result);
     }
 
-    private static void testSplit() {
-        String ss = "aa,sas,sasa,sasas,,,";
-        String[] array = ss.split(",");
-
-        System.out.println(array.length);//结果是4，而不是预想中的7
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
-    }
-
     private static void testResult() {
         for (int i = 0; ; i++) {
             if (i % 2 == 1
