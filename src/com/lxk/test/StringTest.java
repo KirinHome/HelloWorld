@@ -16,11 +16,26 @@ public class StringTest {
             testStringBufferAndStringBuilder();
             testStringNewLine();
             testSplit();
+            testStringPool2();
         } else {
             testStringPool();
         }
     }
 
+    /**
+     * 还是测试字符串 ==
+     */
+    private static void testStringPool2(){
+        String s1 = "a";
+        String s3 = "a" + "b";
+        String s2 = s1 + "b";
+        System.out.println(s1 == s2);
+        System.out.println(s3 == s2);
+    }
+
+    /**
+     * 测试字符串的 split()
+     */
     private static void testSplit() {
         String ss = "aa,sas,sasa,sasas,,,";
         String[] array = ss.split(",");

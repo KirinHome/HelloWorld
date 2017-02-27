@@ -156,13 +156,6 @@ public class Questions {
         return sum + questions7(sum - 1);
     }
 
-    private static void question8(){
-        String s1 = "a";
-        String s3 = "a" + "b";
-        String s2 = s1 + "b";
-        System.out.println(s1 == s2);
-        System.out.println(s3 == s2);
-    }
     public static void main(String[] args) {
         questions1();
         questions2();
@@ -172,7 +165,6 @@ public class Questions {
         questions6();
         long result = questions7(100);
         System.out.println(result);
-        question8();
     }
 }
 
