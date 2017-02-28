@@ -2,6 +2,8 @@ package com.lxk.test;
 
 import com.lxk.enumModel.GameEnum;
 
+import java.util.List;
+
 /**
  * Java枚举用法测试
  * <p>
@@ -16,6 +18,8 @@ public class EnumTest {
 
     /**
      * 测试新建某个枚举的枚举变量
+     * @see GameEnum
+     * @see com.lxk.collectionTest.GetDifferenceSet#getDifferenceSetByGuava(List, List)
      */
     private static void testNewEnum() {
         GameEnum s = GameEnum.BIG;
