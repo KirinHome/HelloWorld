@@ -1,5 +1,7 @@
 package com.lxk.test;
 
+import com.lxk.model.TimeFormatModel;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -10,9 +12,14 @@ import java.util.Date;
  */
 public class TimeTest {
     public static void main(String[] args) {
-        Date date = new Date();
+        //Date date = new Date();
         //Date aw = Calendar.getInstance().getTime();//获得时间的另一种方式，测试效果一样
-        testTime(date);
+        //testTime(date);
+        TimeFormatModel t = new TimeFormatModel();
+        t.setDate(new Date());
+        long a = System.currentTimeMillis();
+        System.out.println(t.toString());
+        System.out.println("\r<br> 执行耗时 : " + (System.currentTimeMillis() - a) / 1000f + " 秒 ");
     }
 
     /**
