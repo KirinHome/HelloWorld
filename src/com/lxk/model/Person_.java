@@ -1,11 +1,14 @@
 package com.lxk.model;
 
+import java.io.Serializable;
+
 /**
  * 测试model集合按某属性排序
  * <p>
  * Created by lxk on 2016/11/25
  */
-public class Person_ {
+public class Person_ implements Serializable, Cloneable {
+    private static final long serialVersionUID = 1L;
     private int age;
     private String name;
 
@@ -14,7 +17,7 @@ public class Person_ {
         this.name = name;
     }
 
-    int getAge() {
+    public int getAge() {
         return age;
     }
 
@@ -36,5 +39,15 @@ public class Person_ {
                 "age=" + age +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public Person_ clone() {
+        Person_ person_ = null;
+        try {
+            person_ = (Person_) super.clone();
+        } catch (CloneNotSupportedException ignored) {
+        }
+        return person_;
     }
 }
