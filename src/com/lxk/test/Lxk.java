@@ -23,7 +23,16 @@ public class Lxk {
 
     /**
      * 测试代码块的执行
-     * {@link CodeBlockModel#name}
+     * {@link com.lxk.model.CodeBlockModel}
+     * 不顶头写，也可以，{@link CodeBlockModel}
+     * 不顶头写，也可以，{@link CodeBlockModel#name}
+     * 不顶头写，也可以，{@link CodeBlockModel#CodeBlockModel}
+     *
+     * @see com.lxk.model.CodeBlockModel
+     * @see CodeBlockModel
+     * @see CodeBlockModel#name
+     * @see CodeBlockModel#CodeBlockModel
+     * 不顶头写，就无效了，@see com.lxk.model.CodeBlockModel
      */
     private static void testCodeBlock() {
         CodeBlockModel codeBlockModel1 = new CodeBlockModel();
