@@ -7,7 +7,15 @@ import java.util.Arrays;
  */
 public class ArraysTest {
     public static void main(String[] args) {
-        testArraysCopy();
+        //testArraysCopy();
+        testArrayInit();
+    }
+
+    private static void testArrayInit() {
+        Object[][] ss = new Object[2][2];
+        Object[][] ww ={{12,12},{12,12}};
+        System.out.println(Arrays.deepToString(ss));
+        System.out.println(Arrays.deepToString(ww));
     }
 
     private static void testArraysCopy() {
