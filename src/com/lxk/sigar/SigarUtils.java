@@ -3,6 +3,7 @@ package com.lxk.sigar;
 import org.hyperic.sigar.*;
 
 import java.net.InetAddress;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -13,8 +14,8 @@ import java.util.Properties;
  */
 public class SigarUtils {
     private static Sigar sigar;
-    private static long unit = (1024L * 1024L * 1024L);
-
+    private static final long UNIT_GB = (1024L * 1024L * 1024L);
+    private static final DecimalFormat FORMAT = new DecimalFormat("##0.00");
     /**
      * 获取sigar实体
      */
@@ -115,9 +116,11 @@ public class SigarUtils {
     public static List<SigarInfoEntity> getMemoryInfos() throws SigarException {
         List<SigarInfoEntity> memoryInfoList = new ArrayList<>();
         Mem mem = getInstance().getMem();
-        memoryInfoList.add(new SigarInfoEntity(((float)mem.getTotal() / 1024L / 1024L / 1024L)+ "GB", "内存总量"));
-        memoryInfoList.add(new SigarInfoEntity(mem.getUsed() / 1024L + "K used", "当前内存使用量"));
-        memoryInfoList.add(new SigarInfoEntity(mem.getFree() / 1024L + "K free", "当前内存剩余量"));
+        memoryInfoList.add(new SigarInfoEntity(FORMAT.format((float) mem.getTotal() / UNIT_GB) + "GB", "内存总量"));
+        memoryInfoList.add(new SigarInfoEntity(FORMAT.format((float) mem.getUsed() / UNIT_GB) + " GB", "内存使用量"));
+        memoryInfoList.add(new SigarInfoEntity(FORMAT.format((float) mem.getFree() / UNIT_GB) + " GB", "内存剩余量"));
+        memoryInfoList.add(new SigarInfoEntity(FORMAT.format(mem.getUsedPercent()) + " %", "内存使用百分比"));
+        memoryInfoList.add(new SigarInfoEntity(FORMAT.format(mem.getFreePercent()) + " %", "内存剩余百分比"));
 
         Swap swap = getInstance().getSwap();
         memoryInfoList.add(new SigarInfoEntity(swap.getTotal() / 1024L + "K av", "交换区总量"));
