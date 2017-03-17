@@ -8,6 +8,9 @@ public class Car implements Comparable<Car> {
     private List<Dog> myDog;
     private List<String> boys;
 
+    public Car() {
+    }
+
     public Car(String sign, int price) {
         this.sign = sign;
         this.price = price;

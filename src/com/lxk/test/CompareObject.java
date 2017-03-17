@@ -16,6 +16,8 @@ import java.util.List;
  */
 public class CompareObject {
     public static void main(String[] args) {
+        Car s = new Car();
+        System.out.println(s);
         Dog dog1 = new Dog("大师兄的dog", true, true);
         Dog dog2 = new Dog("大师兄的dog", false, false);
         List<Dog> dogs = Lists.newArrayList();
