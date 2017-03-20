@@ -1,4 +1,4 @@
-package com.lxk.Reflect;
+package com.lxk.reflect;
 
 /**
  * 代码块执行顺序测试

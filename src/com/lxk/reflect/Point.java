@@ -1,4 +1,4 @@
-package com.lxk.Reflect;
+package com.lxk.reflect;
 
 /**
  * Created by lxk on 2017/2/21

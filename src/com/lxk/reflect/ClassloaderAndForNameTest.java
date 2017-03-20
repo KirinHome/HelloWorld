@@ -1,4 +1,4 @@
-package com.lxk.Reflect;
+package com.lxk.reflect;
 
 /**
  * Class.forName和classloader的区别
