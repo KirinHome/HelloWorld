@@ -1,4 +1,4 @@
-package com.lxk.Reflect.forNameAndClassloader;
+package com.lxk.Reflect;
 
 /**
  * 代码块执行顺序测试

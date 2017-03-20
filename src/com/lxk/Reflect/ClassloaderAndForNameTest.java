@@ -1,4 +1,4 @@
-package com.lxk.Reflect.forNameAndClassloader;
+package com.lxk.Reflect;
 
 /**
  * Class.forName和classloader的区别
@@ -7,8 +7,8 @@ package com.lxk.Reflect.forNameAndClassloader;
  */
 public class ClassloaderAndForNameTest {
     public static void main(String[] args) {
-        //String wholeNameLine = "com.lxk.Reflect.forNameAndClassloader.Line";
-        //String wholeNamePoint = "com.lxk.Reflect.forNameAndClassloader.Point";
+        //String wholeNameLine = "com.lxk.Reflect.Line";
+        //String wholeNamePoint = "com.lxk.Reflect.Point";
         //System.out.println("下面是测试Classloader的效果");
         //testClassloader(wholeNameLine, wholeNamePoint);
         //System.out.println("----------------------------------");
