@@ -13,6 +13,13 @@ public class TimeFormatModel {
     Date date;
 
 
+    public TimeFormatModel() {
+    }
+
+    public TimeFormatModel(Date date) {
+        this.date = date;
+    }
+
     public Date getDate() {
         return date;
     }

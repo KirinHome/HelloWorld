@@ -26,9 +26,14 @@ public class TimeTest {
      * 查看 Calendar 获得年月日时分秒
      */
     private static void testCalendar() {
+        //1490084570
+
+        Date ping = new Date(1490084570000L);
         Calendar cal =Calendar.getInstance();
         TimeFormatModel t = new TimeFormatModel();
         t.setDate(cal.getTime());
+        System.out.println(t.toString());
+        t.setDate(ping);
         System.out.println(t.toString());
         System.out.println(cal.get(Calendar.YEAR));
         System.out.println(cal.get(Calendar.MONTH));
