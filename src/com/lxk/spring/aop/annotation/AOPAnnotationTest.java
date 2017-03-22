@@ -5,6 +5,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
+ * 测试切面编程AOP（注解实现）
+ * <p>
  * Created by lxk on 2016/11/28
  */
 public class AOPAnnotationTest {
