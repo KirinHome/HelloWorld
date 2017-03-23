@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 测试 SimpleDateFormat 声明为静态变量能在toString中使用吗
+ * 测试 SimpleDateFormat 声明为静态变量能在toString中使用吗(能用但是线程不安全，这么声明不合适。)
  * <p>
  * Created by lxk on 2017/2/28
  */
@@ -16,15 +16,15 @@ public class TimeFormatModel {
     }
 
     public TimeFormatModel(Date date) {
-        this.date = date;
+        this.date = (Date)date.clone();
     }
 
     public Date getDate() {
-        return date;
+        return (Date)date.clone();
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.date = (Date)date.clone();
     }
 
     @Override
