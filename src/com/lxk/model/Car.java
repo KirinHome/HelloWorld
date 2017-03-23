@@ -67,4 +67,13 @@ public class Car implements Comparable<Car> {
         return this.getPrice() - o.getPrice();
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "sign='" + sign + '\'' +
+                ", price=" + price +
+                ", myDog=" + myDog +
+                ", boys=" + boys +
+                '}';
+    }
 }
