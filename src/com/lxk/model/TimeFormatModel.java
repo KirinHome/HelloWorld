@@ -5,12 +5,11 @@ import java.util.Date;
 
 /**
  * 测试 SimpleDateFormat 声明为静态变量能在toString中使用吗
- *
+ * <p>
  * Created by lxk on 2017/2/28
  */
 public class TimeFormatModel {
-    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-    Date date;
+    private Date date;
 
 
     public TimeFormatModel() {
@@ -36,6 +35,7 @@ public class TimeFormatModel {
     }
 
     private String formatTime() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         return format.format(date.getTime());
     }
 }
