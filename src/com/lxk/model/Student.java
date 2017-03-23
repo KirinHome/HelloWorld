@@ -37,7 +37,9 @@ public class Student implements Cloneable {
         Student student = null;
         try {
             student = (Student) super.clone();
-            student.setCar(car.clone());
+            if (car != null) {
+                student.setCar(car.clone());
+            }
         } catch (CloneNotSupportedException ignored) {
             System.out.println(ignored.getMessage());
         }
