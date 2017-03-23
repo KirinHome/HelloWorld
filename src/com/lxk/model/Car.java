@@ -1,8 +1,10 @@
 package com.lxk.model;
 
+import com.google.common.collect.Lists;
+
 import java.util.List;
 
-public class Car implements Comparable<Car> {
+public class Car implements Cloneable, Comparable<Car> {
     private String sign;
     private int price;
     private List<Dog> myDog;
@@ -75,5 +77,22 @@ public class Car implements Comparable<Car> {
                 ", myDog=" + myDog +
                 ", boys=" + boys +
                 '}';
+    }
+
+    @Override
+    public Car clone() {
+        Car car = null;
+        try {
+            car = (Car) super.clone();
+            if (myDog != null) {
+                car.setMyDog(Lists.newArrayList(myDog));
+            }
+            if (boys != null) {
+                car.setBoys(Lists.newArrayList(boys));
+            }
+        } catch (CloneNotSupportedException ignored) {
+            System.out.println(ignored.getMessage());
+        }
+        return car;
     }
 }
