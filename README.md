@@ -6,10 +6,10 @@
 
 
 ## About me
-- QQ：[1181415316](http://blog.csdn.net/qq_27093465?viewmode=contents)
+- QQ：[1181415316](http://blog.csdn.net/qq_27093465?viewmode=contents"我的qq号")
 - Email：  [cmshome@163.com](http://mail.163.com/)
 - GitHub： [Please Call Me Big Brother.](https://github.com/cmshome)
-- Blog：   [请叫我大师兄](http://blog.csdn.net/qq_27093465?viewmode=contents)
+- CSDN：   [请叫我大师兄](http://blog.csdn.net/qq_27093465?viewmode=contents)
 
 ## Copyright and License
 **The MIT License (MIT)**  
