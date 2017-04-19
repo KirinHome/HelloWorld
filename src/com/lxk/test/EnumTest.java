@@ -11,9 +11,24 @@ import java.util.List;
  */
 public class EnumTest {
     public static void main(String[] args) {
-        forEnum();
-        useEnumInJava();
-        testNewEnum();
+        //forEnum();
+        //useEnumInJava();
+        //testNewEnum();
+        testEnumEqual();
+    }
+
+    /**
+     * 测试枚举比较,使用equal和==
+     */
+    private static void testEnumEqual() {
+        GameEnum s1 = GameEnum.BIG;
+        GameEnum s2 = GameEnum.BIG;
+        GameEnum ss1 = GameEnum.SMALL;
+        System.out.println("s1 == s2：" + (s1 == s2));
+        System.out.println("s1.equals(s2)：" + (s1.equals(s2)));
+
+        System.out.println("s1 == ss1：" + (s1 == ss1));
+        System.out.println("s1.equals(ss1)：" + (s1.equals(ss1)));
     }
 
     /**
