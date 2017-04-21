@@ -2,8 +2,10 @@
 
 
 ## Introduction
-[各种Java相关的测试代码](http://blog.csdn.net/qq_27093465?viewmode=contents)
-
+[各种Java相关的测试代码:倒序](http://blog.csdn.net/qq_27093465?viewmode=contents)
+* 学习HashMap 1.8源码中的put方法
+* 测试for循环，第三个条件是i++和++i的差别，发现效果是一样的
+* 测试Java类的成员和初始化块（代码块）初始化顺序
 * 打印螺旋蛇形矩阵的代码
 * 枚举类型值的比较：可以直接使用==来判断，不一定非得使用equals方法
 * 工厂模式的实现-饱汉式，饿汉式，双重锁形式。三种实现方式。
