@@ -3,6 +3,7 @@
 
 ## Introduction
 [各种Java相关的测试代码:倒序](http://blog.csdn.net/qq_27093465?viewmode=contents)
+* 如何写好一个readme.md文件
 * 学习HashMap 1.8源码中的put方法
 * 测试for循环，第三个条件是i++和++i的差别，发现效果是一样的
 * 测试Java类的成员和初始化块（代码块）初始化顺序
