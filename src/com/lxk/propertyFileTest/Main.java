@@ -11,7 +11,8 @@ import java.util.Properties;
 public class Main {
     public static void main(String[] args) {
         Properties prop = readPropertiesFile();
-        writePropertiesFile(prop);
+        MainOrder.printProp(prop);
+        //writePropertiesFile(prop);
     }
 
     /**
@@ -21,12 +22,9 @@ public class Main {
         Properties properties = new Properties();
         InputStream inputStream = null;
         try {
-            inputStream = new BufferedInputStream(new FileInputStream("D:config.properties"));
+            inputStream = new BufferedInputStream(new FileInputStream("D:testOrder.properties"));
             //prop.load(in);//直接这么写，如果properties文件中有汉子，则汉字会乱码。因为未设置编码格式。
             properties.load(new InputStreamReader(inputStream, "utf-8"));
-            for (String key : properties.stringPropertyNames()) {
-                System.out.println(key + ":" + properties.getProperty(key));
-            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
