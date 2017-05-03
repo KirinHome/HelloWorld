@@ -15,7 +15,7 @@ public class MainOrder {
     public static void main(String[] args) {
         Properties prop = readOrderedPropertiesFile();
         printProp(prop);
-        //writeOrderedPropertiesFile(prop);
+        writeOrderedPropertiesFile(prop);
     }
 
     /**

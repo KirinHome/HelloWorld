@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         Properties prop = readPropertiesFile();
         MainOrder.printProp(prop);
-        //writePropertiesFile(prop);
+        writePropertiesFile(prop);
     }
 
     /**
