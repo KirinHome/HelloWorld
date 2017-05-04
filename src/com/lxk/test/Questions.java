@@ -130,9 +130,7 @@ public class Questions {
         List<Integer> list2 = Arrays.asList(b);
         Set<Integer> all = Sets.newHashSet();
         List<Integer> share = Lists.newArrayList();
-        for (Integer integer : list1) {
-            all.add(integer);
-        }
+        all.addAll(list1);
         for (Integer integer : list2) {
             if (!all.add(integer)) {
                 share.add(integer);
