@@ -3,8 +3,8 @@
 ## 目录
 * [Introduction](#简要说明)
 * [Life](#漫漫人生路)
-* [About me](#关于我)
-* [Copyright and License](#copyright)
+* [About me](#about--me)
+* [Copyright and License](#copyright--and--license)
 
 
 ## 简要说明
@@ -71,17 +71,17 @@
 ## 漫漫人生路
 ![begin][start] ![going on][going on] ![going on][going on more]
 
-## 关于我
+## About Me
 - QQ：[1181415316][CSDN_]
 - Email：  [cmshome@163.com][Email]
 - GitHub： [Please Call Me Big Brother.][Github]
 - CSDN：   [请叫我大师兄][CSDN]
 
-## Copyright
+## Copyright and License
 **The MIT License (MIT)**
 
 
-[回到顶部](#helloworld)
+[回到顶部](#helloworld--)
 
 [Email]:http://mail.163.com/ "我的邮箱"
 [Github]:https://github.com/cmshome "我的GitHub"
