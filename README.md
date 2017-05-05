@@ -2,9 +2,9 @@
 
 ## 目录
 * [Introduction](#introduction)
-* [Life](#life)
-* [About me](#about )
-* [Copyright and License](#copyright )
+* [Life](#Life)
+* [About me](#about)
+* [Copyright and License](#copyright)
 
 
 ## Introduction
