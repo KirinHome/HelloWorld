@@ -3,8 +3,8 @@
 ## 目录
 * [Introduction](#简要说明)
 * [Life](#漫漫人生路)
-* [About me](#about--me)
-* [Copyright and License](#copyright--and--license)
+* [About me](#about-me)
+* [Copyright and License](#copyright-and-license)
 
 
 ## 简要说明
