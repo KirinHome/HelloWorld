@@ -2,7 +2,7 @@
 
 ## 目录
 * [Introduction](#introduction)
-* [Life](#Life)
+* [Life](#life)
 * [About me](#about)
 * [Copyright and License](#copyright)
 
@@ -71,13 +71,13 @@
 ## Life
 ![begin][start] ![going on][going on] ![going on][going on more]
 
-## About me
+## About
 - QQ：[1181415316][CSDN_]
 - Email：  [cmshome@163.com][Email]
 - GitHub： [Please Call Me Big Brother.][Github]
 - CSDN：   [请叫我大师兄][CSDN]
 
-## Copyright and License
+## Copyright
 **The MIT License (MIT)**
 
 
