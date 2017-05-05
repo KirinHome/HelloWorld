@@ -1,13 +1,13 @@
 # HelloWorld  ![:kiss:][lips]
 
 ## 目录
-* [Introduction](#introduction)
-* [Life](#life)
-* [About me](#about)
+* [Introduction](#简要说明)
+* [Life](#漫漫人生路)
+* [About me](#关于我)
 * [Copyright and License](#copyright)
 
 
-## Introduction
+## 简要说明
 [各种Java相关的测试代码:倒序][CSDN]
 * 读写properties文件测试
 * 如何写好一个readme.md文件
@@ -68,10 +68,10 @@
 * 装饰设计模式简单实现
 * 文件流测试
 
-## Life
+## 漫漫人生路
 ![begin][start] ![going on][going on] ![going on][going on more]
 
-## About
+## 关于我
 - QQ：[1181415316][CSDN_]
 - Email：  [cmshome@163.com][Email]
 - GitHub： [Please Call Me Big Brother.][Github]
