@@ -1,10 +1,10 @@
 # HelloWorld  ![:kiss:][lips]
 
 ## 目录
-* [Introduction](#Introduction)
-* [Life](#Life)
-* [About me](#About me)
-* [Copyright and License](#Copyright and License)
+* [Introduction](#introduction)
+* [Life](#life)
+* [About me](#about me)
+* [Copyright and License](#copyright and License)
 
 
 ## Introduction
