@@ -3,8 +3,8 @@
 ## 目录
 * [Introduction](#introduction)
 * [Life](#life)
-* [About me](#aboutme)
-* [Copyright and License](#copyrightandlicense)
+* [About me](#about )
+* [Copyright and License](#copyright )
 
 
 ## Introduction
