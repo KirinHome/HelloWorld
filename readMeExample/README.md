@@ -155,8 +155,8 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 ### 链接本仓库里的URL
 |语法|效果|
 |----|-----|
-|`[我的简介](/example/profile.md)`|[我的简介](/example/profile.md)|
-|`[Book](./Book)`|[Book](/Book)|
+|`[我的简介](/readMeExample/example/profile.md)`|[我的简介](/readMeExample/example/profile.md)|
+|`[Book](./readMeExample/Book)`|[Book](/readMeExample/Book)|
 
 ### 图片链接
 给图片加链接的本质是混合图片显示语法和普通的链接语法。普通的链接中[ ]内部是链接要显示的文本，而图片链接[ ]里面则是要显示的图片。  
@@ -320,6 +320,6 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 [zhihu]:https://www.zhihu.com/people/jellywong "我的知乎，欢迎关注"
 [weibo]:http://weibo.com/linpiaochen
 [baidu-logo]:http://www.baidu.com/img/bdlogo.gif "百度logo"
-[weibo-logo]:/img/weibo.png "点击图片进入我的微博"
-[csdn-logo]:/img/csdn.png "我的CSDN博客"
+[weibo-logo]:/readMeExample/img/weibo.png "点击图片进入我的微博"
+[csdn-logo]:/readMeExample/img/csdn.png "我的CSDN博客"
 [foryou]:https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif

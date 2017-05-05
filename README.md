@@ -1,8 +1,14 @@
-# HelloWorld  ![:kiss:](https://github.com/jsw0528/rails_emoji/raw/master/vendor/assets/images/emojis/kiss.png)
+# HelloWorld  ![:kiss:][lips]
+
+## 目录
+* [Introduction](#Introduction)
+* [Life](#Life)
+* [About me](#About me)
+* [Copyright and License](#Copyright and License)
 
 
 ## Introduction
-[各种Java相关的测试代码:倒序](http://blog.csdn.net/qq_27093465?viewmode=contents)
+[各种Java相关的测试代码:倒序][CSDN]
 * 读写properties文件测试
 * 如何写好一个readme.md文件
 * 学习HashMap 1.8源码中的put方法
@@ -63,13 +69,23 @@
 * 文件流测试
 
 ## Life
-![begin](http://forum.csdn.net/PointForum/ui/scripts/csdn/Plugin/003/onion/41.gif "刚刚毕业，好好学习。") ![going on](http://forum.csdn.net/PointForum/ui/scripts/csdn/Plugin/003/onion/83.gif "渐入佳境，高调装逼。") ![going on](http://forum.csdn.net/PointForum/ui/scripts/csdn/Plugin/003/onion/2.gif "最高境界，低调低调。")
+![begin][start] ![going on][going on] ![going on][going on more]
 
 ## About me
-- QQ：[1181415316](http://blog.csdn.net/qq_27093465?viewmode=contents "我的qq号")
-- Email：  [cmshome@163.com](http://mail.163.com/ "我的邮箱")
-- GitHub： [Please Call Me Big Brother.](https://github.com/cmshome "我的GitHub")
-- CSDN：   [请叫我大师兄](http://blog.csdn.net/qq_27093465?viewmode=contents "我的CSDN")
+- QQ：[1181415316][CSDN_]
+- Email：  [cmshome@163.com][Email]
+- GitHub： [Please Call Me Big Brother.][Github]
+- CSDN：   [请叫我大师兄][CSDN]
 
 ## Copyright and License
-**The MIT License (MIT)**  
+**The MIT License (MIT)**
+
+
+[Email]:http://mail.163.com/ "我的邮箱"
+[Github]:https://github.com/cmshome "我的GitHub"
+[CSDN]:http://blog.csdn.net/qq_27093465?viewmode=contents "我的CSDN"
+[CSDN_]:http://blog.csdn.net/qq_27093465?viewmode=contents "我的qq号"
+[start]:http://forum.csdn.net/PointForum/ui/scripts/csdn/Plugin/003/onion/41.gif "刚刚毕业，好好学习。"
+[going on]:http://forum.csdn.net/PointForum/ui/scripts/csdn/Plugin/003/onion/83.gif "渐入佳境，高调装逼。"
+[going on more]:http://forum.csdn.net/PointForum/ui/scripts/csdn/Plugin/003/onion/2.gif "最高境界，低调低调。"
+[lips]:https://github.com/jsw0528/rails_emoji/raw/master/vendor/assets/images/emojis/kiss.png "烈焰红唇"
