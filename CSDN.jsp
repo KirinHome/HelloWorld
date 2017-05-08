@@ -22,7 +22,7 @@
     <li>为啥呢：<span style="color:#ff1c1a">大师兄是一直在维护的</span></li>
 </ul>
 <ul>
-    <marquee scrolldelay="1000" style="color:#ff1c1a; font-weight:bold">【大师兄说】本博客有用吗 ？ 有用就点个赞，留个言。说明博客质量可以 ： 暂时没用，也不要踩哟。</marquee>
+    <marquee scrolldelay="1000" style="letter-spacing:5px; color:#ff1c1a; font-weight:bold">【大师兄说】本博客有用吗 ？ 有用请点赞留言，说明博客质量可以。 ： 暂时没用，也请不要踩。</marquee>
 </ul>
 
 
