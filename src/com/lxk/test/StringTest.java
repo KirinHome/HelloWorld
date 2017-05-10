@@ -17,9 +17,23 @@ public class StringTest {
             testStringNewLine();
             testSplit();
             testStringPool2();
-        } else {
             testStringPool();
+        } else {
+            testStringToChar();
         }
+    }
+
+    /**
+     * 测试string转换成char类型
+     */
+    private static void testStringToChar() {
+        String s = "abcdefghi";
+        char result[] = s.toCharArray();
+        char ss = s.toCharArray()[0];
+        System.out.println(ss);
+        System.out.println(result);
+        char char0 = s.charAt(0);
+        System.out.println(char0);
     }
 
     /**
