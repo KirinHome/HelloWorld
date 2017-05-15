@@ -14,14 +14,25 @@ import java.util.Set;
 public class MainOrder {
     public static void main(String[] args) {
         Properties prop = readOrderedPropertiesFile();
+        trimSpace(prop);
         printProp(prop);
         writeOrderedPropertiesFile(prop);
+    }
+
+
+    /**
+     * 读取properties文件的值中会可能会有空格，需要处理一下。
+     */
+    private static void trimSpace(Properties prop) {
+        for (Map.Entry<Object, Object> entry : prop.entrySet()) {
+            entry.setValue(entry.getValue().toString().trim());
+        }
     }
 
     /**
      * 输出properties的key和value
      */
-    public static void printProp(Properties properties) {
+    static void printProp(Properties properties) {
         System.out.println("---------（方式一）------------");
         for (String key : properties.stringPropertyNames()) {
             System.out.println(key + "=" + properties.getProperty(key));
@@ -55,7 +66,8 @@ public class MainOrder {
         Properties properties = new OrderedProperties();
         InputStreamReader inputStreamReader = null;
         try {
-            InputStream inputStream = new BufferedInputStream(new FileInputStream("D:testOrder.properties"));
+            //es-source
+            InputStream inputStream = new BufferedInputStream(new FileInputStream("D:es-source_未修改.properties"));
             //prop.load(in);//直接这么写，如果properties文件中有汉子，则汉字会乱码。因为未设置编码格式。
             inputStreamReader = new InputStreamReader(inputStream, "utf-8");
             properties.load(inputStreamReader);
@@ -81,7 +93,16 @@ public class MainOrder {
         OutputStreamWriter outputStreamWriter = null;
         try {
             //保存属性到b.properties文件
-            FileOutputStream fileOutputStream = new FileOutputStream("order.properties", false);//true表示追加打开,false每次都是清空再重写
+            String filePath = "D:/lxk/conf";
+            File file = new File(filePath);
+            if(!file.exists()){
+                boolean result = file.mkdirs();
+                if (!result) {
+                    return ;
+                }
+            }
+
+            FileOutputStream fileOutputStream = new FileOutputStream(filePath + "/es-source-lxk-test.properties", false);//true表示追加打开,false每次都是清空再重写
             //prop.store(oFile, "此参数是保存生成properties文件中第一行的注释说明文字");//这个会两个地方乱码
             //prop.store(new OutputStreamWriter(oFile, "utf-8"), "汉字乱码");//这个就是生成的properties文件中第一行的注释文字乱码
             outputStreamWriter = new OutputStreamWriter(fileOutputStream, "utf-8");
