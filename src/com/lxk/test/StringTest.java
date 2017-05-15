@@ -18,9 +18,20 @@ public class StringTest {
             testSplit();
             testStringPool2();
             testStringPool();
-        } else {
             testStringToChar();
+        } else {
+            testListToString();
         }
+    }
+
+    private static void testListToString() {
+        List<String> s = Lists.newArrayList("1","2","3");
+        StringBuilder sb = new StringBuilder();
+        for (String s1 : s) {
+            sb.append(s1).append(",");
+        }
+        //(",",sb.lastIndexOf(",")))
+        System.out.println(sb.toString().substring(0,sb.lastIndexOf(",")));
     }
 
     /**
