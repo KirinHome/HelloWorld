@@ -13,7 +13,32 @@ import java.util.Properties;
  */
 public class FileTest {
     public static void main(String[] args) {
-        testFileIsExists();
+        //testFileIsExists();
+        testRenameFile();
+
+    }
+
+    /**
+     * 重命名一个文件：将原来的文件直接修改
+     */
+    private static void testRenameFile() {
+        String filePath = "D:/test/我是.conf";
+        try {
+            File src = new File(filePath);
+            filePath += ".properties";
+            File des = new File(filePath);
+            if (des.exists()) {
+                boolean res = des.delete();
+                if (!res) {
+                    System.out.println("Failed to delete file");
+                }
+            }
+            if (!src.renameTo(des)) {
+                System.out.println("Failed to renameTo file");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     /**
@@ -49,4 +74,6 @@ public class FileTest {
             }
         }
     }
+
+
 }
