@@ -2,6 +2,7 @@ package com.lxk.test;
 
 import com.lxk.model.TimeFormatModel;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -19,8 +20,22 @@ public class TimeTest {
         //long a = System.currentTimeMillis();
         //System.out.println(t.toString());
         //System.out.println("\r<br> 执行耗时 : " + (System.currentTimeMillis() - a) / 1000f + " 秒 ");
-        testCalendar();
+        //testCalendar();
+        testStringToDate();
     }
+
+    private static void testStringToDate() {
+        String s = "2017-05-25";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = format.parse(s);
+        } catch (ParseException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println(date);
+    }
+
 
     /**
      * 查看 Calendar 获得年月日时分秒
@@ -29,7 +44,7 @@ public class TimeTest {
         //1490084570
 
         Date ping = new Date(1490084570000L);
-        Calendar cal =Calendar.getInstance();
+        Calendar cal = Calendar.getInstance();
         TimeFormatModel t = new TimeFormatModel();
         t.setDate(cal.getTime());
         System.out.println(t.toString());
