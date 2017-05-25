@@ -1,8 +1,6 @@
 package com.lxk.fileTest.characterFile;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * 复制文件：先从硬盘读到内存，在写到硬盘
@@ -16,11 +14,11 @@ class CopyText {
      * 用缓冲区读写，来提升读写效率。
      */
     private static void fileCopyRightWay() {
-        FileWriter fw = null;
-        FileReader fr = null;
+        InputStreamReader fr = null;
+        OutputStreamWriter fw = null;
         try {
-            fr = new FileReader("D:MyAssetJob.java");//读
-            fw = new FileWriter("e:MyAssetJob.txt");//写
+            fr = new InputStreamReader(new FileInputStream("D:MyAssetJob.java"),"UTF-8");//读
+            fw = new OutputStreamWriter(new FileOutputStream("e:MyAssetJob.txt"), "UTF-8");//写
             char[] buf = new char[1024];//缓冲区
             int len;
             while ((len = fr.read(buf)) != -1) {
