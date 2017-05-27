@@ -1,6 +1,9 @@
 package com.lxk.collectionTest;
 
+import com.google.common.collect.Lists;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -8,6 +11,18 @@ import java.util.List;
  */
 public class ArrayListTest {
     public static void main(String[] args) {
+        //test1();
+        testSortList();
+    }
+
+    private static void testSortList() {
+        List<Integer> list = Lists.newArrayList(5,2,13,4,22,3);
+        System.out.println(list);
+        Collections.sort(list);
+        System.out.println(list);
+    }
+
+    private static void test1() {
         List<String> list = new ArrayList<>(2);
         System.out.println("list大小为：" + list.size());
         list.add("12");
@@ -21,4 +36,5 @@ public class ArrayListTest {
         System.out.println("list大小为：" + list.size());
         System.out.println(list.toString());
     }
+
 }
