@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 /**
- * 测试Map是否有序的车别
+ * 测试Map是否有序的区别
  * <p>
  * Created by lxk on 2017/5/24
  */
