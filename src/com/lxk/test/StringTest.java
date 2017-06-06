@@ -20,8 +20,25 @@ public class StringTest {
             testStringPool();
             testStringToChar();
         } else {
-            testListToString();
+            //testListToString();
+            testReverseString();
         }
+    }
+
+    /**
+     * 将字符串倒序
+     */
+    private static void testReverseString() {
+        String string = "please call me big brother";
+        char[] chars = string.toCharArray();
+        int length = chars.length;
+        for (int i = 0; i < length / 2; i++) {
+            char temp;
+            temp = chars[i];
+            chars[i] = chars[length - 1 - i];
+            chars[length - 1 - i] = temp;
+        }
+        System.out.println(chars);
     }
 
     private static void testListToString() {
