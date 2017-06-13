@@ -21,6 +21,9 @@ public class ArrayListTest {
      */
     private static void testAddAllNull() {
         List<String> list = Lists.newArrayList();
+        list.add(null);
+        list.add(null);
+        list.add(null);
         list.addAll(null);
     }
 
