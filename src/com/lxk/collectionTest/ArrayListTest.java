@@ -12,7 +12,16 @@ import java.util.List;
 public class ArrayListTest {
     public static void main(String[] args) {
         //test1();
-        testSortList();
+        //testSortList();
+        testAddAllNull();
+    }
+
+    /**
+     * list.addAll(null)异常
+     */
+    private static void testAddAllNull() {
+        List<String> list = Lists.newArrayList();
+        list.addAll(null);
     }
 
     private static void testSortList() {
