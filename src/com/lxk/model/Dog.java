@@ -12,6 +12,8 @@ public class Dog {
     private boolean isLoyal;//是忠诚的
     private boolean alive;//活蹦乱跳的
 
+    public Dog() {
+    }
 
     public Dog(boolean isLoyal, boolean alive) {
         this.isLoyal = isLoyal;
