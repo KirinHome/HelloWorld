@@ -81,7 +81,7 @@
 **The MIT License (MIT)**
 
 
-[Email]:http://mail.163.com/ "我的邮箱"
+[Email]:mailto:cmshome@163.com "我的邮箱"
 [Github]:https://github.com/cmshome "我的GitHub"
 [CSDN]:http://blog.csdn.net/qq_27093465?viewmode=contents "我的CSDN"
 [CSDN_]:http://blog.csdn.net/qq_27093465?viewmode=contents "我的qq号"
