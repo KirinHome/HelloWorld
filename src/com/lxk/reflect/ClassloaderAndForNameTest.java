@@ -7,14 +7,14 @@ package com.lxk.reflect;
  */
 public class ClassloaderAndForNameTest {
     public static void main(String[] args) {
-        //String wholeNameLine = "com.lxk.Reflect.Line";
-        //String wholeNamePoint = "com.lxk.Reflect.Point";
-        //System.out.println("下面是测试Classloader的效果");
-        //testClassloader(wholeNameLine, wholeNamePoint);
-        //System.out.println("----------------------------------");
-        //System.out.println("下面是测试Class.forName的效果");
-        //testForName(wholeNameLine, wholeNamePoint);
-        Line line = new Line();
+        String wholeNameLine = "com.lxk.reflect.Line";
+        String wholeNamePoint = "com.lxk.reflect.Point";
+        System.out.println("下面是测试Classloader的效果");
+        testClassloader(wholeNameLine, wholeNamePoint);
+        System.out.println("----------------------------------");
+        System.out.println("下面是测试Class.forName的效果");
+        testForName(wholeNameLine, wholeNamePoint);
+        //Line line = new Line();
 
     }
 
