@@ -17,11 +17,12 @@ public class StringTest {
             testStringNewLine();
             testSplit();
             testStringPool2();
-            testStringPool();
+            testListToString();
+            testReverseString();
             testStringToChar();
         } else {
-            //testListToString();
-            testReverseString();
+            testStringPool();
+
         }
     }
 
@@ -180,5 +181,21 @@ public class StringTest {
             如果字符串常量池中存在相同内容的字符串对象的引用，则将这个引用返回。
             否则新的字符串对象被创建，然后将这个引用放入字符串常量池，并返回该引用。
          */
+        System.out.println("-----------new test -----");
+        String aa = "hello2";
+        final String bb = "hello";
+        String dd = "hello";
+        String cc = bb + 2;
+        String ee = dd + 2;
+        String ff = "hello" + 2;
+        System.out.println("------aa 和 cc ee ff 比较--------");
+        System.out.println("aa == cc " + (aa == cc));//true,因为bb是final类型(这个会因为bb是否是final而结果不同，)
+        System.out.println("aa == ee " + (aa == ee));//false
+        System.out.println("aa == ff " + (aa == ff));//true,因为ff是直接由字面量形式创建出来的，不经过中间变量。
+        //ff为字符串直接拼出来的，不经过中间变量。
+        System.out.println("------ff 和 aa cc ee 比较--------");
+        System.out.println("ff == aa " + (ff == aa));//true,因为ff是直接由字面量形式创建出来的，不经过中间变量。
+        System.out.println("ff == cc " + (ff == cc));//true,因为bb是final类型(这个会因为bb是否是final而结果不同，)
+        System.out.println("ff == ee " + (ff == ee));//false
     }
 }
