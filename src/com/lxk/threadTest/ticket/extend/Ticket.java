@@ -13,17 +13,22 @@ public class Ticket extends Thread {
 
     /**
      * 这地方就是需要注意的地方，如果不加[synchronized]，就会发生线程安全问题。
+     * 奇怪了，
+     * 怎么还是线程不安全，还是会执行出0，-1，-2。的结果出来。
      */
     @Override
-    public synchronized void run() {
+    //public synchronized void run() {
+    public void run() {
         while (true) {
-            if (ticket > 0) {
-                //睡一下，好实现线程不安全的现象,前提是这个方法，没有添加synchronized，同步函数。
-                try {
-                    Thread.sleep(10);
-                } catch (Exception ignored) {
+            synchronized (this) {
+                if (ticket > 0) {
+                    //睡一下，好实现线程不安全的现象,前提是这个方法，没有添加synchronized，同步函数。
+                    try {
+                        Thread.sleep(10);
+                    } catch (Exception ignored) {
+                    }
+                    System.out.println(this.getName() + " sale：" + ticket--);
                 }
-                System.out.println(this.getName() + " sale：" + ticket--);
             }
         }
     }
