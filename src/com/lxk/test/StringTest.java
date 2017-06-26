@@ -20,9 +20,22 @@ public class StringTest {
             testListToString();
             testReverseString();
             testStringToChar();
-        } else {
             testStringPool();
+        } else {
+            testIndexOf();
 
+        }
+    }
+
+    /**
+     * 使用indexOf()来拆分字符串：D:\Android\sdk\add-ons
+     */
+    private static void testIndexOf() {
+        String s = "D:\\Android\\sdk\\add-ons";
+        System.out.println(s);
+        while (s.lastIndexOf("\\") > 0) {
+            s = s.substring(0, s.lastIndexOf("\\"));
+            System.out.println(s);
         }
     }
 
@@ -43,13 +56,13 @@ public class StringTest {
     }
 
     private static void testListToString() {
-        List<String> s = Lists.newArrayList("1","2","3");
+        List<String> s = Lists.newArrayList("1", "2", "3");
         StringBuilder sb = new StringBuilder();
         for (String s1 : s) {
             sb.append(s1).append(",");
         }
         //(",",sb.lastIndexOf(",")))
-        System.out.println(sb.toString().substring(0,sb.lastIndexOf(",")));
+        System.out.println(sb.toString().substring(0, sb.lastIndexOf(",")));
     }
 
     /**
@@ -68,7 +81,7 @@ public class StringTest {
     /**
      * 还是测试字符串 ==
      */
-    private static void testStringPool2(){
+    private static void testStringPool2() {
         String s1 = "a";
         String s3 = "a" + "b";
         String s2 = s1 + "b";
