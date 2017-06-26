@@ -10,19 +10,19 @@ class Test implements Runnable {
     public void run() {
         if (flag) {
             while (true) {
-                synchronized (MyLock.locka) {
-                    System.out.println(Thread.currentThread().getName() + "...if locka ");
-                    synchronized (MyLock.lockb) {
-                        System.out.println(Thread.currentThread().getName() + "..if lockb");
+                synchronized (MyLock.lockA) {
+                    System.out.println(Thread.currentThread().getName() + "...if lockA ");
+                    synchronized (MyLock.lockB) {
+                        System.out.println(Thread.currentThread().getName() + "..if lockB");
                     }
                 }
             }
         } else {
             while (true) {
-                synchronized (MyLock.lockb) {
-                    System.out.println(Thread.currentThread().getName() + "..else lockb");
-                    synchronized (MyLock.locka) {
-                        System.out.println(Thread.currentThread().getName() + ".....else locka");
+                synchronized (MyLock.lockB) {
+                    System.out.println(Thread.currentThread().getName() + "..else lockB");
+                    synchronized (MyLock.lockA) {
+                        System.out.println(Thread.currentThread().getName() + ".....else lockA");
                     }
                 }
             }
@@ -32,8 +32,8 @@ class Test implements Runnable {
 
 
 class MyLock {
-    static Object locka = new Object();
-    static Object lockb = new Object();
+    static final Object lockA = new Object();
+    static final Object lockB = new Object();
 }
 
 class DeadLockTest {
