@@ -15,6 +15,9 @@ public class Ticket extends Thread {
      * 这地方就是需要注意的地方，如果不加[synchronized]，就会发生线程安全问题。
      * 奇怪了，
      * 怎么还是线程不安全，还是会执行出0，-1，-2。的结果出来。
+     * 错误原因的分析：
+     * 可以看到添加的锁的对象是this，但是在main方法中有4个对象，每个对象都对自己加锁，锁不同，所以，还是不安全的。
+     * 比如：换成对Ticket.class加锁，那就安全啦。
      */
     @Override
     //public synchronized void run() {
