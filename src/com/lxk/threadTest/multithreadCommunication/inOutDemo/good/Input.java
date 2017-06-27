@@ -1,4 +1,4 @@
-package com.lxk.threadTest.MultithreadCommunication.InOutDemo.good;
+package com.lxk.threadTest.multithreadCommunication.inOutDemo.good;
 
 /**
  * Created by lxk on 2017/6/27

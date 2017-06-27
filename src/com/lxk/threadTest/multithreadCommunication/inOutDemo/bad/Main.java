@@ -1,4 +1,4 @@
-package com.lxk.threadTest.MultithreadCommunication.InOutDemo.bad;
+package com.lxk.threadTest.multithreadCommunication.inOutDemo.bad;
 
 /**
  * 两个线程，一个负责写，一个负责读，交互着来。

@@ -1,4 +1,4 @@
-package com.lxk.ClassInitTest;
+package com.lxk.classInitTest;
 
 /**
  * 子类
