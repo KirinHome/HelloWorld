@@ -12,8 +12,7 @@ public class Ticket implements Runnable {
         if (flag) {
             while (true) {
                 //synchronized (object) {//这个同步代码块使用的锁是object，而下面的同步函数使用的是锁是this，所以，这么干就线程不安全。
-                //换成this就变得安全啦。
-                synchronized (this) {
+                synchronized (this) {//换成this就变得安全啦。说明下面同步函数使用的锁是this
                     if (tick > 0) {
                         try {
                             Thread.sleep(10);
