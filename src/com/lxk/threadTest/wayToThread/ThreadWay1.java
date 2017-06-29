@@ -11,7 +11,7 @@ public class ThreadWay1 implements Runnable {
         for (; ; ) {
             try {
                 Thread.sleep(1000);//毫秒
-                System.out.println("thread1");
+                System.out.println(Thread.currentThread().getName() + "...implements Runnable way");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

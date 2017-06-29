@@ -11,7 +11,7 @@ import java.util.concurrent.Callable;
  * <p>
  * Created by lxk on 2017/6/27
  */
-public class ThreadWay3 implements Callable {
+public class ThreadWay3 implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
@@ -20,7 +20,7 @@ public class ThreadWay3 implements Callable {
             try {
                 Thread.sleep(1000);//毫秒
                 sum += 1;
-                System.out.println("thread1" + sum);
+                System.out.println(Thread.currentThread().getName() + "...implements Callable<T>..." + sum);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

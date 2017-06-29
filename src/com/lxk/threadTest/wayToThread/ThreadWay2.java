@@ -11,7 +11,7 @@ public class ThreadWay2 extends Thread {
         for (; ; ) {
             try {
                 Thread.sleep(1000);//毫秒
-                System.out.println("thread1");
+                System.out.println(Thread.currentThread().getName() + "...extends way");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

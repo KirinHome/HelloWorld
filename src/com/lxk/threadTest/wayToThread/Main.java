@@ -1,5 +1,7 @@
 package com.lxk.threadTest.wayToThread;
 
+import java.util.concurrent.FutureTask;
+
 /**
  * 线程测试（实现多线程的几种方式）
  * <p>
@@ -23,6 +25,7 @@ public class Main {
         ThreadWay1 threadWay1 = new ThreadWay1();
         new Thread(threadWay1).start();
         //new Thread(new ThreadWay1()).start();//等于上面的2行代码
+        System.out.println(Thread.currentThread().getName() + "...implements Runnable way");
     }
 
 
@@ -34,6 +37,7 @@ public class Main {
         ThreadWay2 threadWay2 = new ThreadWay2();
         threadWay2.start();
         //new ThreadWay2().start();//等于上面的2行代码
+        System.out.println(Thread.currentThread().getName() + "...extends way");
     }
 
     /**
@@ -43,8 +47,14 @@ public class Main {
     private static void newThreadWay3() {
         int resultFromThread;
         try {
-            resultFromThread = new ThreadWay3().call();
-            System.out.println(resultFromThread);
+            ThreadWay3 threadWay3 = new ThreadWay3();
+            FutureTask<Integer> future = new FutureTask<>(threadWay3);
+            new Thread(future).start();
+            Thread.sleep(5000);// 可能做一些事情
+            //注意：
+            // 这个有个问题：主线程必须等子线程执行完，才可以继续执行，变成了同步啦，这就不太好啦。失去了多线程的意义啦。
+            resultFromThread = future.get();
+            System.out.println(Thread.currentThread().getName() + "...implements Callable<T>..." + resultFromThread);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -62,7 +72,7 @@ public class Main {
                 for (; ; ) {//死循环
                     try {
                         Thread.sleep(1000);//毫秒
-                        System.out.println("thread1");
+                        System.out.println(Thread.currentThread().getName() + "...new Runnable()匿名对象");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -70,6 +80,7 @@ public class Main {
 
             }
         }).start();
+        System.out.println(Thread.currentThread().getName() + "......new Runnable()匿名对象");
     }
 
     /**
@@ -84,7 +95,7 @@ public class Main {
                 for (; ; ) {
                     try {
                         Thread.sleep(1000);//毫秒
-                        System.out.println("thread1");
+                        System.out.println(Thread.currentThread().getName() + "...new Runnable()非匿名对象");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -92,5 +103,6 @@ public class Main {
             }
         });
         thread.start();
+        System.out.println(Thread.currentThread().getName() + "...new Runnable()非匿名对象");
     }
 }
