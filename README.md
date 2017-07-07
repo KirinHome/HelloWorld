@@ -8,65 +8,323 @@
 
 
 ## 简要说明
-[各种Java相关的测试代码:倒序][CSDN]
-* 读写properties文件测试
-* 如何写好一个readme.md文件
-* 学习HashMap 1.8源码中的put方法
-* 测试for循环，第三个条件是i++和++i的差别，发现效果是一样的
-* 测试Java类的成员和初始化块（代码块）初始化顺序
-* 打印螺旋蛇形矩阵的代码
-* 枚举类型值的比较：可以直接使用==来判断，不一定非得使用equals方法
-* 工厂模式的实现-饱汉式，饿汉式，双重锁形式。三种实现方式。
-* 使用Collections.emptyList()的作用好处和注意的地方
-* 正确实现Java的clone方法
-* SimpleDateFormat 线程不安全的，所以不能声明为静态变量
-* spring 依赖注入，控制反转，(ioc，di)，使用注解实现。
-* pom.xml各个选项配置的解释
-* Date ping = new Date(1490084570000L);
-* Calendar.get(int )方法测试
-* 添加默认无参构造函数，测试bean中普通类型 int 在未初始化时，是有默认值0的，不是null
-* 同类型的两个对象比较属性值，得到不同属性的名称和对应的值
-* 测试list的toString方法，普通类型会打印成数组的格式，要是自定义的对象，若不重写toString方法，则会打印为内存的地址，而不是对象的toString结果
-* 二维数组的初始化
-* 求1-100的素数测试
-* javadoc中{@link}与@see的简单使用以及区别
-* 测试Java的clone方法： 1，要实现Cloneable接口 2，对象是地址传递，不同地方引用，修改的是同一个数据。
-* @see 标签允许用户引用其他类的文档。 @see classname @see fully-qualified-classname @see fully-qualified-classname#method-name
-* 使用guava工具类来取List集合的差集：Sets.difference(e1,e2)
-* "\r\n",后台或者文件内换行;<br>,拼在字符串中，可以在前台换行.
-* Java中普通代码块，构造代码块，静态代码块区别及代码示例
-* java反射中，Class.forName和classloader的区别: class.forName()除了将类的.class文件加载到jvm中之外，还会对类进行解释，执行类中的static块。
-* guava工具类求list和map集合的差集
-* {@link CodeBlockModel#name}注释中如何使用@link
-* 代码块的测试
-* 封装基本数据类型，直接字符串和new字符串，在作为函数参数时，都是值传递。
-* List集合初始化固定大小之后，未初始化list集合的内容，直接修改下标为n的值，即set(index,value)，就会数组越界异常
-* 字符串常量池的理解和测试，补充上简单的理论知识。
-* Arrays.copyOf 复制时地址引用问题的测试
-* 字符串比较的问题：使用 == 和equal方法的异同的测试
-* 题目：输入一个整数n，求从1到n这n个整数的十进制表示中1出现的次数。
-* 求答案 ？ 一筐鸡蛋： 1个1个拿，正好拿完。 2个2个拿，还剩1个。 3个3个拿，正好拿完。 4个4个拿，还剩1个。 5个5个拿，还差1个。 6个6个拿，还剩3个。 7个7个拿，还剩4个。 8个8个拿，还剩1个。 9个9个拿，正好拿完。
-* 字符串函数split操作之后生成的数组的长度测试，与预测的不一样
-* 测试重写：@override
-* 修正枚举类型命名，按照命名规范命名：以Enum结尾
-* 数字格式化测试
-* float 类型保留n位小数
-* long 类型转 float 测试
-* 测试字符串split分成数组之后的长度问题以及生成的数组是不是null
-* sigar-获得系统信息实例
-* boolean属性值的getter和setter特殊地方
-* 枚举带参数的进一步理解
-* 日期UTC标准时
-* jdbc和spring结合：声明式事物处理。
-* spring和jdbc声明式事物处理xml配置实现。
-* jdbc两种方式配置连接池，并测试写入数据到DB。
-* spring AOP 配置分组：xml和注解
-* spring AOP配置可运行版
-* AOP概念整理
-* jdk动态代理模式代码实现
-* 静态代理模式代码
-* 装饰设计模式简单实现
-* 文件流测试
+[本项目主要文件的目录树][CSDN]
+```
+├─ b.properties
+├─ CSDN.jsp
+├─ HelloWorld.iml
+├─ lib
+│ 	├─ aspectjrt-1.7.4.jar
+│ 	├─ aspectjweaver-1.7.4.jar
+│ 	├─ cglib-nodep-2.1_3.jar
+│ 	├─ common-annotations.jar
+│ 	├─ commons-collections-3.1.jar
+│ 	├─ commons-dbcp.jar
+│ 	├─ commons-logging.jar
+│ 	├─ commons-pool.jar
+│ 	├─ dom4j-1.6.1.jar
+│ 	├─ fastjson-1.2.21.jar
+│ 	├─ guava-19.0.jar
+│ 	├─ hamcrest-core-1.3.jar
+│ 	├─ hibernate3.jar
+│ 	├─ intellijIDEA-settings-20170328.jar
+│ 	├─ javassist-3.9.0.GA.jar
+│ 	├─ jta-1.1.jar
+│ 	├─ junit-4.12.jar
+│ 	├─ log4j-1.2.15.jar
+│ 	├─ mysql-connector-java-5.1.10-bin.jar
+│ 	├─ poi-3.11.jar
+│ 	├─ sigar-1.6.4.jar
+│ 	├─ sigar-1.6.5.132.jar
+│ 	├─ slf4j-api-1.7.5-sources.jar
+│ 	├─ slf4j-api-1.7.5.jar
+│ 	├─ slf4j-log4j12.jar
+│ 	├─ spring-beans-4.1.4.RELEASE.jar
+│ 	└─ spring.jar
+├─ log.properties
+├─ log4j.xml
+├─ logs
+├─ order.properties
+├─ pom.xml
+├─ README.md
+├─ readMeExample
+│ 	├─ Book
+│ 	│ 	└─ profile.md
+│ 	├─ emoji.md
+│ 	├─ example
+│ 	│ 	└─ profile.md
+│ 	├─ img
+│ 	│ 	├─ csdn.png
+│ 	│ 	├─ weibo.png
+│ 	│ 	└─ zhihu.png
+│ 	└─ README.md
+├─ src
+│ 	├─ com
+│ 	│ 	└─ lxk
+│ 	│ 		├─ aop
+│ 	│ 		│ 	├─ Logger.java
+│ 	│ 		│ 	├─ MainTest.java
+│ 	│ 		│ 	├─ Privilege.java
+│ 	│ 		│ 	├─ SalaryService.java
+│ 	│ 		│ 	├─ SalaryServiceImpl.java
+│ 	│ 		│ 	├─ SalaryServiceProxy.java
+│ 	│ 		│ 	└─ Security.java
+│ 	│ 		├─ atInterfaceTest
+│ 	│ 		│ 	└─ AtInterfaceTest.java
+│ 	│ 		├─ classInitTest
+│ 	│ 		│ 	├─ Child.java
+│ 	│ 		│ 	├─ ClassInitTest.java
+│ 	│ 		│ 	└─ Parent.java
+│ 	│ 		├─ collectionTest
+│ 	│ 		│ 	├─ ArrayListTest.java
+│ 	│ 		│ 	├─ EmptyList.java
+│ 	│ 		│ 	├─ EmptyTest.java
+│ 	│ 		│ 	├─ GetDifferenceSet.java
+│ 	│ 		│ 	├─ HashMapTest.java
+│ 	│ 		│ 	├─ ListToString.java
+│ 	│ 		│ 	├─ MyHashMap.java
+│ 	│ 		│ 	└─ OrderedMapTest.java
+│ 	│ 		├─ commonTest
+│ 	│ 		│ 	├─ ArraysTest.java
+│ 	│ 		│ 	├─ CloneTest.java
+│ 	│ 		│ 	├─ EnumTest.java
+│ 	│ 		│ 	├─ ForTest.java
+│ 	│ 		│ 	├─ IntegerTest.java
+│ 	│ 		│ 	├─ StringTest.java
+│ 	│ 		│ 	├─ SwitchCaseTest.java
+│ 	│ 		│ 	├─ TimeTest.java
+│ 	│ 		│ 	├─ TryCatchFinallyTest.java
+│ 	│ 		│ 	└─ TTest.java
+│ 	│ 		├─ concurrentModificationExceptionTest
+│ 	│ 		│ 	└─ ConcurrentModificationExceptionTest.java
+│ 	│ 		├─ designPattern
+│ 	│ 		│ 	├─ decorator
+│ 	│ 		│ 	│ 	├─ Person.java
+│ 	│ 		│ 	│ 	├─ PersonBefore.java
+│ 	│ 		│ 	│ 	├─ PersonDemo.java
+│ 	│ 		│ 	│ 	└─ PersonNow.java
+│ 	│ 		│ 	├─ factory
+│ 	│ 		│ 	├─ proxy
+│ 	│ 		│ 	│ 	├─ dynamicProxy
+│ 	│ 		│ 	│ 	│ 	├─ cglbDynamicProxy
+│ 	│ 		│ 	│ 	│ 	│ 	├─ MainTest.java
+│ 	│ 		│ 	│ 	│ 	│ 	├─ MyInterceptor.java
+│ 	│ 		│ 	│ 	│ 	│ 	└─ TargetObject.java
+│ 	│ 		│ 	│ 	│ 	└─ jdkDynamicProxy
+│ 	│ 		│ 	│ 	│ 		├─ MainTest.java
+│ 	│ 		│ 	│ 	│ 		├─ MyInterceptor.java
+│ 	│ 		│ 	│ 	│ 		├─ TargetInterface.java
+│ 	│ 		│ 	│ 	│ 		└─ TargetObject.java
+│ 	│ 		│ 	│ 	└─ staticProxy
+│ 	│ 		│ 	│ 		├─ MainTest.java
+│ 	│ 		│ 	│ 		├─ ProxyObject.java
+│ 	│ 		│ 	│ 		├─ TargetInterface.java
+│ 	│ 		│ 	│ 		└─ TargetObject.java
+│ 	│ 		│ 	└─ singleton
+│ 	│ 		│ 		├─ Main.java
+│ 	│ 		│ 		├─ SingletonPattern1.java
+│ 	│ 		│ 		├─ SingletonPattern2.java
+│ 	│ 		│ 		└─ SingletonPattern3.java
+│ 	│ 		├─ extendTest
+│ 	│ 		│ 	├─ Child.java
+│ 	│ 		│ 	├─ ExtendTestMain.java
+│ 	│ 		│ 	└─ Parent.java
+│ 	│ 		├─ fileTest
+│ 	│ 		│ 	├─ byteFile
+│ 	│ 		│ 	├─ characterFile
+│ 	│ 		│ 	│ 	├─ BufferedReaderDemo.java
+│ 	│ 		│ 	│ 	├─ BufferedWriterDemo.java
+│ 	│ 		│ 	│ 	├─ CopyText.java
+│ 	│ 		│ 	│ 	├─ CopyTextByBuf.java
+│ 	│ 		│ 	│ 	├─ FileReaderDemo.java
+│ 	│ 		│ 	│ 	├─ FileReaderDemo2.java
+│ 	│ 		│ 	│ 	├─ FileReaderTest.java
+│ 	│ 		│ 	│ 	├─ FileWriterDemo.java
+│ 	│ 		│ 	│ 	├─ FileWriterDemo2.java
+│ 	│ 		│ 	│ 	├─ FileWriterDemo3.java
+│ 	│ 		│ 	│ 	└─ WtiterTest.java
+│ 	│ 		│ 	├─ FileTest.java
+│ 	│ 		│ 	├─ poiTest
+│ 	│ 		│ 	│ 	└─ PoiTest.java
+│ 	│ 		│ 	├─ propertyFileTest
+│ 	│ 		│ 	│ 	├─ config.properties
+│ 	│ 		│ 	│ 	├─ Main.java
+│ 	│ 		│ 	│ 	├─ MainOrder.java
+│ 	│ 		│ 	│ 	└─ OrderedProperties.java
+│ 	│ 		│ 	└─ xmlTest
+│ 	│ 		│ 		├─ XmlModel.java
+│ 	│ 		│ 		└─ XmlTest.java
+│ 	│ 		├─ findBugs
+│ 	│ 		│ 	├─ Bug1.java
+│ 	│ 		│ 	└─ Bug2.java
+│ 	│ 		├─ formatTest
+│ 	│ 		│ 	├─ DateFormat.java
+│ 	│ 		│ 	└─ NumberFormatTest.java
+│ 	│ 		├─ guavaTest
+│ 	│ 		│ 	├─ ConstantMap.java
+│ 	│ 		│ 	├─ ImmutableMapTest.java
+│ 	│ 		│ 	├─ ListsTest.java
+│ 	│ 		│ 	├─ MapsTest.java
+│ 	│ 		│ 	├─ SetsTest.java
+│ 	│ 		│ 	└─ StringToolsTest.java
+│ 	│ 		├─ javaDocTest
+│ 	│ 		│ 	└─ JavaDocTest.java
+│ 	│ 		├─ json
+│ 	│ 		│ 	└─ JsonTest.java
+│ 	│ 		├─ log
+│ 	│ 		│ 	└─ LogMain.java
+│ 	│ 		├─ lombok
+│ 	│ 		├─ model
+│ 	│ 		│ 	├─ Car.java
+│ 	│ 		│ 	├─ CEO.java
+│ 	│ 		│ 	├─ CodeBlockModel.java
+│ 	│ 		│ 	├─ Dog.java
+│ 	│ 		│ 	├─ Employee.java
+│ 	│ 		│ 	├─ enumModel
+│ 	│ 		│ 	│ 	├─ GameEnum.java
+│ 	│ 		│ 	│ 	├─ SeasonEnum.java
+│ 	│ 		│ 	│ 	└─ TypeEnum.java
+│ 	│ 		│ 	├─ Manager.java
+│ 	│ 		│ 	├─ MultiObject.java
+│ 	│ 		│ 	├─ PersonByAge.java
+│ 	│ 		│ 	├─ PersonByName.java
+│ 	│ 		│ 	├─ Person_.java
+│ 	│ 		│ 	├─ Point.java
+│ 	│ 		│ 	├─ Student.java
+│ 	│ 		│ 	└─ TimeFormatModel.java
+│ 	│ 		├─ mongo
+│ 	│ 		│ 	└─ mongoJavaDriver
+│ 	│ 		├─ programQuestions
+│ 	│ 		│ 	├─ CountEggs.java
+│ 	│ 		│ 	├─ CountNumberOf1.java
+│ 	│ 		│ 	├─ FindTheNumber.java
+│ 	│ 		│ 	├─ FindTheSpecialNumber.java
+│ 	│ 		│ 	├─ PrimeNumberTest.java
+│ 	│ 		│ 	├─ PrintSnakeMatrixTest.java
+│ 	│ 		│ 	└─ Questions.java
+│ 	│ 		├─ reflect
+│ 	│ 		│ 	├─ ClassloaderAndForNameTest.java
+│ 	│ 		│ 	├─ CodeBlockTest.java
+│ 	│ 		│ 	├─ Line.java
+│ 	│ 		│ 	└─ Point.java
+│ 	│ 		├─ sigar
+│ 	│ 		│ 	├─ SigarInfoEntity.java
+│ 	│ 		│ 	├─ SigarMain.java
+│ 	│ 		│ 	└─ SigarUtils.java
+│ 	│ 		├─ spring
+│ 	│ 		│ 	├─ aop
+│ 	│ 		│ 	│ 	├─ annotation
+│ 	│ 		│ 	│ 	│ 	├─ AOPAnnotationTest.java
+│ 	│ 		│ 	│ 	│ 	├─ applicationContext.xml
+│ 	│ 		│ 	│ 	│ 	├─ Person.java
+│ 	│ 		│ 	│ 	│ 	├─ PersonDao.java
+│ 	│ 		│ 	│ 	│ 	├─ PersonDaoImpl.java
+│ 	│ 		│ 	│ 	│ 	└─ Transaction.java
+│ 	│ 		│ 	│ 	└─ xml
+│ 	│ 		│ 	│ 		├─ AOPXMLTest.java
+│ 	│ 		│ 	│ 		├─ applicationContext.xml
+│ 	│ 		│ 	│ 		├─ applicationContext1.xml
+│ 	│ 		│ 	│ 		├─ Logger.java
+│ 	│ 		│ 	│ 		├─ Person.java
+│ 	│ 		│ 	│ 		├─ PersonDao.java
+│ 	│ 		│ 	│ 		├─ PersonDaoImpl.java
+│ 	│ 		│ 	│ 		└─ Transaction.java
+│ 	│ 		│ 	├─ config
+│ 	│ 		│ 	│ 	├─ applicationContext.xml
+│ 	│ 		│ 	│ 	├─ BigBrother.java
+│ 	│ 		│ 	│ 	├─ config.properties
+│ 	│ 		│ 	│ 	└─ MainTest.java
+│ 	│ 		│ 	├─ ioc
+│ 	│ 		│ 	│ 	├─ applicationContext.xml
+│ 	│ 		│ 	│ 	├─ Axe.java
+│ 	│ 		│ 	│ 	├─ Chinese.java
+│ 	│ 		│ 	│ 	├─ Main.java
+│ 	│ 		│ 	│ 	├─ Person.java
+│ 	│ 		│ 	│ 	├─ SteelAxe.java
+│ 	│ 		│ 	│ 	└─ StoneAxe.java
+│ 	│ 		│ 	├─ jdbc
+│ 	│ 		│ 	│ 	├─ applicationContext.xml
+│ 	│ 		│ 	│ 	├─ DataSourceTest.java
+│ 	│ 		│ 	│ 	├─ jdbc.properties
+│ 	│ 		│ 	│ 	├─ Person.java
+│ 	│ 		│ 	│ 	├─ PersonDao.java
+│ 	│ 		│ 	│ 	├─ PersonDaoImpl.java
+│ 	│ 		│ 	│ 	├─ PersonDaoTest.java
+│ 	│ 		│ 	│ 	└─ PersonRowMapper.java
+│ 	│ 		│ 	└─ transaction
+│ 	│ 		│ 		└─ xml
+│ 	│ 		│ 			├─ applicationContext.xml
+│ 	│ 		│ 			├─ jdbc.properties
+│ 	│ 		│ 			├─ PersonDao.java
+│ 	│ 		│ 			├─ PersonDaoImpl.java
+│ 	│ 		│ 			├─ PersonService.java
+│ 	│ 		│ 			├─ PersonServiceImpl.java
+│ 	│ 		│ 			└─ PersonTest.java
+│ 	│ 		├─ systemTest
+│ 	│ 		│ 	└─ SystemDemo.java
+│ 	│ 		├─ test
+│ 	│ 		│ 	├─ CompareObject.java
+│ 	│ 		│ 	├─ DiskTool.java
+│ 	│ 		│ 	└─ NoGroupTest.java
+│ 	│ 		├─ threadTest
+│ 	│ 		│ 	├─ bank
+│ 	│ 		│ 	│ 	├─ Bank.java
+│ 	│ 		│ 	│ 	├─ Customer.java
+│ 	│ 		│ 	│ 	└─ Main.java
+│ 	│ 		│ 	├─ callable
+│ 	│ 		│ 	│ 	├─ Main.java
+│ 	│ 		│ 	│ 	└─ MyCallable.java
+│ 	│ 		│ 	├─ deadLoack
+│ 	│ 		│ 	│ 	├─ DeadLockTest.java
+│ 	│ 		│ 	│ 	├─ Main.java
+│ 	│ 		│ 	│ 	└─ Ticket.java
+│ 	│ 		│ 	├─ ListPerformance.java
+│ 	│ 		│ 	├─ multithreadCommunication
+│ 	│ 		│ 	│ 	├─ inOutDemo
+│ 	│ 		│ 	│ 	│ 	├─ bad
+│ 	│ 		│ 	│ 	│ 	│ 	├─ Input.java
+│ 	│ 		│ 	│ 	│ 	│ 	├─ Main.java
+│ 	│ 		│ 	│ 	│ 	│ 	├─ Output.java
+│ 	│ 		│ 	│ 	│ 	│ 	└─ Resources.java
+│ 	│ 		│ 	│ 	│ 	└─ good
+│ 	│ 		│ 	│ 	│ 		├─ Input.java
+│ 	│ 		│ 	│ 	│ 		├─ Main.java
+│ 	│ 		│ 	│ 	│ 		├─ Output.java
+│ 	│ 		│ 	│ 	│ 		└─ Resources.java
+│ 	│ 		│ 	│ 	└─ producerConsumer
+│ 	│ 		│ 	│ 		├─ bad
+│ 	│ 		│ 	│ 		│ 	├─ Consumer.java
+│ 	│ 		│ 	│ 		│ 	├─ Main.java
+│ 	│ 		│ 	│ 		│ 	├─ Producer.java
+│ 	│ 		│ 	│ 		│ 	└─ Resource.java
+│ 	│ 		│ 	│ 		└─ good
+│ 	│ 		│ 	│ 			├─ Consumer.java
+│ 	│ 		│ 	│ 			├─ Main.java
+│ 	│ 		│ 	│ 			├─ Producer.java
+│ 	│ 		│ 	│ 			└─ Resource.java
+│ 	│ 		│ 	├─ ticket
+│ 	│ 		│ 	│ 	├─ extend
+│ 	│ 		│ 	│ 	│ 	├─ Main.java
+│ 	│ 		│ 	│ 	│ 	└─ Ticket.java
+│ 	│ 		│ 	│ 	└─ implement
+│ 	│ 		│ 	│ 		├─ Main.java
+│ 	│ 		│ 	│ 		├─ Ticket.java
+│ 	│ 		│ 	│ 		└─ TicketStatic.java
+│ 	│ 		│ 	└─ wayToThread
+│ 	│ 		│ 		├─ Main.java
+│ 	│ 		│ 		├─ ThreadWay1.java
+│ 	│ 		│ 		├─ ThreadWay2.java
+│ 	│ 		│ 		└─ ThreadWay3.java
+│ 	│ 		├─ tool
+│ 	│ 		│ 	└─ DirectoryTreeV1.java
+│ 	│ 		└─ util
+│ 	│ 			├─ FileIOUtil.java
+│ 	│ 			├─ JsonUtils.java
+│ 	│ 			└─ TimesUtils.java
+│ 	└─ testConfig.xml
+└─ sss.xml
+```
+
 
 ## 漫漫人生路
 ![begin][start] ![going on][going on] ![going on][going on more]
