@@ -13,6 +13,9 @@ public class HashMapTest {
         testIterator();
     }
 
+    /**
+     * 测试Iterator迭代器
+     */
     private static void testIterator() {
         HashMap<String, String> map = Maps.newHashMap();
         map.put("a", "one");

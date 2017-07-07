@@ -5,7 +5,11 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 /**
- * 测试Map是否有序的区别
+ * 测试Map是否有序的区别（hashMap，treeMap，linkedHashMap）
+ * 结论：
+ *      hashMap，         无序。
+ *      treeMap，         有序，但跟添加顺序无关。
+ *      linkedHashMap，   有序，且跟添加顺序一致。
  * <p>
  * Created by lxk on 2017/5/24
  */
