@@ -1,5 +1,6 @@
 package com.lxk.commonTest;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 
 import java.util.Arrays;
@@ -12,20 +13,17 @@ import java.util.List;
  */
 public class StringTest {
     public static void main(String[] args) {
-        if (false) {
-            testValueAndAddressTransmit();
-            testStringBufferAndStringBuilder();
-            testStringNewLine();
-            testSplit();
-            testStringPool2();
-            testListToString();
-            testReverseString();
-            testStringToChar();
-            testStringPool();
-            testIndexOf();
-        } else {
-            testSplitPlus();
-        }
+        //testValueAndAddressTransmit();
+        //testStringBufferAndStringBuilder();
+        //testStringNewLine();
+        //testSplit();
+        //testStringPool2();
+        //testListToString();
+        //testReverseString();
+        //testStringToChar();
+        //testStringPool();
+        //testIndexOf();
+        testSplitPlus();
     }
 
     /**
@@ -56,14 +54,20 @@ public class StringTest {
         System.out.println(chars);
     }
 
+    /**
+     * 将list的内容以逗号间隔，最后不应该多个逗号。
+     */
     private static void testListToString() {
         List<String> s = Lists.newArrayList("1", "2", "3");
         StringBuilder sb = new StringBuilder();
         for (String s1 : s) {
             sb.append(s1).append(",");
         }
-        //(",",sb.lastIndexOf(",")))
         System.out.println(sb.toString().substring(0, sb.lastIndexOf(",")));
+        System.out.println("等效的快捷方式");
+        Joiner joiner = Joiner.on(",").skipNulls();//跳过null
+        //System.out.println(joiner.join(s));
+        System.out.println(joiner.join(s.toArray()));
     }
 
     /**
@@ -83,11 +87,12 @@ public class StringTest {
      * 还是测试字符串 ==
      */
     private static void testStringPool2() {
+        String s0 = "ab";
         String s1 = "a";
         String s3 = "a" + "b";
         String s2 = s1 + "b";
-        System.out.println(s1 == s2);
-        System.out.println(s3 == s2);
+        System.out.println(s0 == s3);
+        System.out.println(s2 == s3);
     }
 
     /**
@@ -150,11 +155,14 @@ public class StringTest {
 
     /**
      * 测试值传递和地址传递
+     * 结论。
+     * 字符串：不管是new出来的对象，还是直接用=声明的都是值传递
+     * 基本数据类型：同理，也是值传递。
      */
     private static void testValueAndAddressTransmit() {
         String transmitValue = "初始值";
         String transmitValueNew = new String("new 出来的字符串");
-        Integer integer = 100;
+        Integer integer = new Integer(900);
         List<String> list = Lists.newArrayList();
         list.add("0");
         testTransmitValue(transmitValue, transmitValueNew, list, integer);
