@@ -2,6 +2,7 @@ package com.lxk.commonTest;
 
 import com.google.common.collect.Lists;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,9 +22,9 @@ public class StringTest {
             testReverseString();
             testStringToChar();
             testStringPool();
-        } else {
             testIndexOf();
-
+        } else {
+            testSplitPlus();
         }
     }
 
@@ -94,13 +95,28 @@ public class StringTest {
      * 返回的数组，若末尾有一连串空的，则舍弃
      */
     private static void testSplit() {
-        String ss = "aa,sas,sasa,sasas,,,";
+        String ss = ",aa,bb,cc,dd,,,";
         String[] array = ss.split(",");
 
-        System.out.println(array.length);//结果是4，而不是预想中的7
+        System.out.println(array.length);//结果是5，而不是预想中的8
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
+    }
+
+    /**
+     * 字符串 split()新发现
+     */
+    private static void testSplitPlus() {
+        String ss = "aa12sas32sasa223sas12as12wqe";
+        String[] array = ss.split("[\\d]+");
+        System.out.println(Arrays.toString(array));
+        ss = "aa,,sas,,sasa,,,,sasas,,,";
+        array = ss.split("[,]+");
+        System.out.println(Arrays.toString(array));
+        ss = "aa  sas sa sa     sas  as  ";
+        array = ss.split("[\\s]+");
+        System.out.println(Arrays.toString(array));
     }
 
     /**
