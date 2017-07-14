@@ -7,10 +7,10 @@ package com.lxk.commonTest;
  */
 public class MathTest {
     public static void main(String[] args) {
-        testPow();
-        testAbs();
-        testSqrt();
-        testCeilFloor();
+        testPow();//平方
+        testAbs();//绝对值
+        testSqrt();//开方
+        testCeilFloor();//四舍五入，全舍，全入，
     }
 
     /**
