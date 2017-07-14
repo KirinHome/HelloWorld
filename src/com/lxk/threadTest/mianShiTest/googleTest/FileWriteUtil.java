@@ -1,4 +1,4 @@
-package com.lxk.threadTest.googleTest;
+package com.lxk.threadTest.mianShiTest.googleTest;
 
 import java.io.FileWriter;
 import java.io.IOException;

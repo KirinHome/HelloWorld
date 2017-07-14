@@ -1,4 +1,4 @@
-package com.lxk.threadTest.googleTest;
+package com.lxk.threadTest.mianShiTest.googleTest;
 
 /**
  * Created by lxk on 2017/7/14
