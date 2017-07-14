@@ -20,7 +20,8 @@ public class Bank {
                 Thread.sleep(10);
             } catch (Exception ignore) {
             }
-            System.out.println("sum=" + sum);
+            //当存钱次数变多的时候，就可以发现，存钱的线程确实是2个在交替执行存钱这个动作的。
+            System.out.println(Thread.currentThread().getName() + "...sum=" + sum);
         //}
     }
 }
