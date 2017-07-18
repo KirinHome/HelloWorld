@@ -23,7 +23,19 @@ public class StringTest {
         //testStringToChar();
         //testStringPool();
         //testIndexOf();
-        testSplitPlus();
+        //testSplitPlus();
+        testNewStringArray();
+    }
+
+    /**
+     * 测试一个新建字符串的不常见姿势
+     */
+    private static void testNewStringArray() {
+        String[] command = new String[]{"sh", "-c", "ps -ef | grep \""
+                + "d:test" + "\" | grep \"" + "d:test" + "\" | grep -v \"grep\" | awk '{ print $2}'"};
+        System.out.println(Arrays.toString(command));
+        //结果如下：
+        //[sh, -c, ps -ef | grep "d:test" | grep "d:test" | grep -v "grep" | awk '{ print $2}']
     }
 
     /**
