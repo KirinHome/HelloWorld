@@ -1,14 +1,18 @@
-package com.lxk.reflect;
+package com.lxk.reflect.classloaderAndForName;
 
 /**
  * Class.forName和classloader的区别
+ * 结论如下：
+ * class.forName()前者除了将类的.class文件加载到jvm中之外，还会对类进行解释，执行类中的static块。
+ * 而classLoader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容,只有在newInstance才会去执行static块。
+ * 静态代码块的执行外，竟然还有一个静态方法被执行，就是给静态变量赋值的静态方法被执行了。
  * <p>
  * Created by lxk on 2017/2/21
  */
 public class ClassloaderAndForNameTest {
     public static void main(String[] args) {
-        String wholeNameLine = "com.lxk.reflect.Line";
-        String wholeNamePoint = "com.lxk.reflect.Point";
+        String wholeNameLine = "com.lxk.reflect.classloaderAndForName.Line";
+        String wholeNamePoint = "com.lxk.reflect.classloaderAndForName.Point";
         System.out.println("下面是测试Classloader的效果");
         testClassloader(wholeNameLine, wholeNamePoint);
         System.out.println("----------------------------------");
